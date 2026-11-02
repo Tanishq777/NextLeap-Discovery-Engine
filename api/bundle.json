@@ -1,0 +1,1573 @@
+{
+  "kpis": {
+    "total_raw": 19,
+    "total_relevant": 19,
+    "source_count": 6,
+    "total_sources_possible": 6,
+    "areas_count": 10,
+    "voiced_total": 16,
+    "inferred_total": 3,
+    "avg_severity": 3.27,
+    "has_data": true,
+    "total_on_topic": 19,
+    "total_retention_relevant": 19
+  },
+  "cognitive_metrics": {
+    "total_relevant": 19,
+    "lifecycle_stages": {
+      "early_1_3m": {
+        "count": 9,
+        "pct": 47.4
+      },
+      "mid_4_6m": {
+        "count": 6,
+        "pct": 31.6
+      },
+      "first_month": {
+        "count": 2,
+        "pct": 10.5
+      },
+      "post_dropout": {
+        "count": 1,
+        "pct": 5.3
+      },
+      "late_7_12m": {
+        "count": 1,
+        "pct": 5.3
+      }
+    },
+    "behavioral_signals": {
+      "considering_pause": {
+        "count": 7,
+        "pct": 36.8
+      },
+      "seeking_validation": {
+        "count": 7,
+        "pct": 36.8
+      },
+      "comparing_returns": {
+        "count": 6,
+        "pct": 31.6
+      },
+      "already_paused": {
+        "count": 5,
+        "pct": 26.3
+      },
+      "checking_daily": {
+        "count": 2,
+        "pct": 10.5
+      }
+    },
+    "emotional_states": {
+      "anxious": {
+        "count": 7,
+        "pct": 36.8
+      },
+      "disappointed": {
+        "count": 4,
+        "pct": 21.1
+      },
+      "confused": {
+        "count": 4,
+        "pct": 21.1
+      },
+      "regretful": {
+        "count": 3,
+        "pct": 15.8
+      },
+      "indifferent": {
+        "count": 1,
+        "pct": 5.3
+      }
+    },
+    "trigger_types": {
+      "peer_influence": {
+        "count": 6,
+        "pct": 31.6
+      },
+      "app_experience": {
+        "count": 6,
+        "pct": 31.6
+      },
+      "market_downturn": {
+        "count": 4,
+        "pct": 21.1
+      },
+      "self_doubt": {
+        "count": 4,
+        "pct": 21.1
+      },
+      "news_media": {
+        "count": 3,
+        "pct": 15.8
+      },
+      "financial_need": {
+        "count": 3,
+        "pct": 15.8
+      },
+      "life_event": {
+        "count": 3,
+        "pct": 15.8
+      }
+    },
+    "problem_types": {
+      "lack_of_understanding": {
+        "count": 5,
+        "pct": 26.3
+      },
+      "app_confusion": {
+        "count": 5,
+        "pct": 26.3
+      },
+      "market_anxiety": {
+        "count": 4,
+        "pct": 21.1
+      },
+      "comparison_regret": {
+        "count": 4,
+        "pct": 21.1
+      },
+      "trust_deficit": {
+        "count": 4,
+        "pct": 21.1
+      },
+      "returns_disappointment": {
+        "count": 3,
+        "pct": 15.8
+      },
+      "peer_pressure": {
+        "count": 3,
+        "pct": 15.8
+      },
+      "financial_pressure": {
+        "count": 3,
+        "pct": 15.8
+      },
+      "goal_disconnect": {
+        "count": 2,
+        "pct": 10.5
+      }
+    },
+    "retention_risks": {
+      "high": {
+        "count": 9,
+        "pct": 47.4
+      },
+      "med": {
+        "count": 5,
+        "pct": 26.3
+      },
+      "already_churned": {
+        "count": 5,
+        "pct": 26.3
+      }
+    },
+    "abandonment_count": 5,
+    "abandonment_rate": 26.3
+  },
+  "opportunity_areas": [
+    {
+      "Opportunity Area": "Social Proof Dependency",
+      "Description": "Investors who started because a friend, family member, or influencer told them to have no internal conviction. When that external validation fades or the influencer changes their stance, the user's commitment evaporates.",
+      "Evidence Volume": 3,
+      "Source Diversity": "2/6",
+      "Diversity Raw": 2,
+      "Severity Score": 4.5,
+      "Abandonment Rate": "0.0%",
+      "Abandonment Raw": 0.0,
+      "Voiced Count": 3,
+      "Inferred Count": 0,
+      "Composite Score": 12.48,
+      "Top Quotes": [
+        {
+          "raw_item_id": "fd7287f8-7e87-4114-825e-551897c880ad",
+          "text": "Started investing ₹10,000/month across 4 funds because fin-influencers on Instagram hyped Small Cap funds non-stop. Now small caps are correcting and those same influencers have stopped talking about mutual funds. I feel like an idiot who got trapped by social media hype.",
+          "source_platform": "youtube",
+          "upvotes": 134,
+          "url": "https://www.youtube.com/results?search_query=groww+smallcap+sip",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "4063c697-030b-4d03-84d9-1589453fd690",
+          "text": "I set up two ₹2,500 SIPs in 2023 because of peer pressure at office. Every month on the 5th, ₹5,000 gets debited from my HDFC account. But I don't even know what I am saving for. It just feels like a monthly tax or bill payment that reduces my disposable income. Thinking of stopping both.",
+          "source_platform": "reddit",
+          "upvotes": 115,
+          "url": "https://www.reddit.com/r/IndiaInvestments/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "d75bef45-df3f-461f-8f89-4b2a4cad615d",
+          "text": "My colleague who started SIP at the same time told me he stopped his SIP and put money into IPOs and F&O trading because mutual funds are 'too slow'. I am getting FOMO seeing people make 20% in two days while my Groww SIP gives 8% annualized.",
+          "source_platform": "reddit",
+          "upvotes": 98,
+          "url": "https://www.reddit.com/r/IndianStreetBets/",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "reddit": 2,
+        "youtube": 1
+      }
+    },
+    {
+      "Opportunity Area": "Unrealistic Return Expectations",
+      "Description": "First-time investors expect FD-like guaranteed or high returns from day one. When early SIP statements show negative or flat returns, disappointment triggers disengagement. The mental model of 'investing = instant growth' clashes with the reality of compounding over years.",
+      "Evidence Volume": 3,
+      "Source Diversity": "2/6",
+      "Diversity Raw": 2,
+      "Severity Score": 3.67,
+      "Abandonment Rate": "33.0%",
+      "Abandonment Raw": 0.33,
+      "Voiced Count": 3,
+      "Inferred Count": 0,
+      "Composite Score": 10.17,
+      "Top Quotes": [
+        {
+          "raw_item_id": "28a8735d-0731-4354-b540-6da59bbd81cb",
+          "text": "Started my first SIP of ₹3,000/month in Nifty 50 Index fund on Groww 3 months back. Invested ₹9,000 total and current value is showing ₹8,820 (-2%). I thought mutual funds give 15% guaranteed return. My bank FD at least never goes negative. Thinking of stopping this SIP and keeping money in savings account.",
+          "source_platform": "reddit",
+          "upvotes": 142,
+          "url": "https://www.reddit.com/r/IndiaInvestments/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "fd7287f8-7e87-4114-825e-551897c880ad",
+          "text": "Started investing ₹10,000/month across 4 funds because fin-influencers on Instagram hyped Small Cap funds non-stop. Now small caps are correcting and those same influencers have stopped talking about mutual funds. I feel like an idiot who got trapped by social media hype.",
+          "source_platform": "youtube",
+          "upvotes": 134,
+          "url": "https://www.youtube.com/results?search_query=groww+smallcap+sip",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "06804d55-d7ab-48fa-8c21-7950210e22cf",
+          "text": "All finance YouTubers said SIP compounding will make you rich in 1 year. I have put ₹5,000 every month for 6 months in Parag Parikh Flexi Cap. Return is only ₹850 profit after 6 months. That's less than my credit card cashback. What is the hype about? Definitely paused my SIP.",
+          "source_platform": "youtube",
+          "upvotes": 95,
+          "url": "https://www.youtube.com/results?search_query=groww+sip+mutual+funds",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "reddit": 1,
+        "youtube": 2
+      }
+    },
+    {
+      "Opportunity Area": "Trust & Transparency Deficit",
+      "Description": "Users feel they don't understand where their money is going, what fees or expense ratios they're paying, or whether the platform is acting in their interest. Hidden charges or unclear fund selection erode long-term trust.",
+      "Evidence Volume": 4,
+      "Source Diversity": "4/6",
+      "Diversity Raw": 4,
+      "Severity Score": 3.25,
+      "Abandonment Rate": "25.0%",
+      "Abandonment Raw": 0.25,
+      "Voiced Count": 4,
+      "Inferred Count": 0,
+      "Composite Score": 20.92,
+      "Top Quotes": [
+        {
+          "raw_item_id": "1f0eb7b3-6305-452b-afae-0838517bb75a",
+          "text": "My bank auto-debit failed once due to server issue at 2 AM. Instead of retrying gracefully, Groww immediately showed 'SIP Missed' and my bank charged ₹295 ECS bounce penalty! That penalty is more than the profit I made in 3 months. Worst experience, cancelled the mandate.",
+          "source_platform": "play_store",
+          "upvotes": 182,
+          "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "0e6b8bee-d454-4121-8ce5-4b1dd55ffd42",
+          "text": "Nobody told me about expense ratio, exit loads, and stamp duty when setting up the SIP. When I checked the AMC statement, there are deductions I never saw in the promotional banners. First time investors need radical transparency on fees before they commit for 12 months.",
+          "source_platform": "youtube",
+          "upvotes": 105,
+          "url": "https://www.youtube.com/results?search_query=groww+sip+hidden+charges",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "7d035545-4af2-4444-b6b2-7da9fae6b554",
+          "text": "Can someone explain why my total invested amount increased by ₹2,000 this month after SIP debit, but my total portfolio current value went DOWN by ₹500? Did Groww steal my money or charges deducted? Nobody explains NAV and units clearly in the statement.",
+          "source_platform": "help_forum",
+          "upvotes": 88,
+          "url": "https://tradingqna.com/c/mutual-funds/",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "web": 1,
+        "play_store": 1,
+        "help_forum": 1,
+        "youtube": 1
+      }
+    },
+    {
+      "Opportunity Area": "Comparison & Regret Spiral",
+      "Description": "Comparing their fund's returns to a friend's stock pick, another fund, FD rates, or even gold creates regret and perceived opportunity cost. The 'grass is greener' effect makes their current SIP feel like the wrong choice.",
+      "Evidence Volume": 4,
+      "Source Diversity": "3/6",
+      "Diversity Raw": 3,
+      "Severity Score": 3.25,
+      "Abandonment Rate": "25.0%",
+      "Abandonment Raw": 0.25,
+      "Voiced Count": 4,
+      "Inferred Count": 0,
+      "Composite Score": 15.69,
+      "Top Quotes": [
+        {
+          "raw_item_id": "97aba7d8-8260-49b1-ad72-981327efb4d9",
+          "text": "My friend put ₹50,000 in Tata Motors stock and made 40% in 4 months. I put ₹5,000 every month in a Groww Large Cap SIP and my return is 4.2%. I feel like I'm wasting my youth on safe index funds while inflation eats everything. Considering stopping SIP to do direct equity.",
+          "source_platform": "reddit",
+          "upvotes": 121,
+          "url": "https://www.reddit.com/r/IndianStreetBets/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "d75bef45-df3f-461f-8f89-4b2a4cad615d",
+          "text": "My colleague who started SIP at the same time told me he stopped his SIP and put money into IPOs and F&O trading because mutual funds are 'too slow'. I am getting FOMO seeing people make 20% in two days while my Groww SIP gives 8% annualized.",
+          "source_platform": "reddit",
+          "upvotes": 98,
+          "url": "https://www.reddit.com/r/IndianStreetBets/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "06804d55-d7ab-48fa-8c21-7950210e22cf",
+          "text": "All finance YouTubers said SIP compounding will make you rich in 1 year. I have put ₹5,000 every month for 6 months in Parag Parikh Flexi Cap. Return is only ₹850 profit after 6 months. That's less than my credit card cashback. What is the hype about? Definitely paused my SIP.",
+          "source_platform": "youtube",
+          "upvotes": 95,
+          "url": "https://www.youtube.com/results?search_query=groww+sip+mutual+funds",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "youtube": 1,
+        "reddit": 2,
+        "help_forum": 1
+      }
+    },
+    {
+      "Opportunity Area": "Early Portfolio Anxiety",
+      "Description": "Users check their portfolio daily/weekly in the first few months, get stressed by red numbers, and confuse short-term volatility with permanent loss. The compulsive checking behavior is a leading indicator of eventual dropout.",
+      "Evidence Volume": 2,
+      "Source Diversity": "2/6",
+      "Diversity Raw": 2,
+      "Severity Score": 3.25,
+      "Abandonment Rate": "0.0%",
+      "Abandonment Raw": 0.0,
+      "Voiced Count": 2,
+      "Inferred Count": 0,
+      "Composite Score": 7.14,
+      "Top Quotes": [
+        {
+          "raw_item_id": "28a8735d-0731-4354-b540-6da59bbd81cb",
+          "text": "Started my first SIP of ₹3,000/month in Nifty 50 Index fund on Groww 3 months back. Invested ₹9,000 total and current value is showing ₹8,820 (-2%). I thought mutual funds give 15% guaranteed return. My bank FD at least never goes negative. Thinking of stopping this SIP and keeping money in savings account.",
+          "source_platform": "reddit",
+          "upvotes": 142,
+          "url": "https://www.reddit.com/r/IndiaInvestments/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "08d2687a-004d-40fb-94a7-09b399109bb0",
+          "text": "I open the Groww app every single day during lunch break to check my portfolio. Whenever the market dips even 0.5%, my portfolio turns red and my heartbeat spikes. It's only been 2 months since I started investing ₹5k every month. It is causing me so much daily anxiety.",
+          "source_platform": "play_store",
+          "upvotes": 68,
+          "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "reddit": 1,
+        "play_store": 1
+      }
+    },
+    {
+      "Opportunity Area": "Market Volatility Panic",
+      "Description": "During market corrections, first-time investors panic-stop SIPs, unaware that downturns are when SIPs add the most value through rupee cost averaging. The app's red portfolio screen amplifies fear without providing educational context.",
+      "Evidence Volume": 2,
+      "Source Diversity": "2/6",
+      "Diversity Raw": 2,
+      "Severity Score": 3.25,
+      "Abandonment Rate": "50.0%",
+      "Abandonment Raw": 0.5,
+      "Voiced Count": 1,
+      "Inferred Count": 1,
+      "Composite Score": 7.14,
+      "Top Quotes": [
+        {
+          "raw_item_id": "5a4fc526-f51f-4845-bffd-248a58b139e7",
+          "text": "When the market crashed 3% on election results day, my Groww mutual fund portfolio lost ₹14,000. I panicked and hit 'Cancel SIP' immediately. I cannot afford to lose my hard-earned salary. Will wait until the market is completely safe and rising before investing again.",
+          "source_platform": "reddit",
+          "upvotes": 210,
+          "url": "https://www.reddit.com/r/IndianStreetBets/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "3547ea1d-ee19-455b-9582-e715345aea9d",
+          "text": "New investors are panicking because midcap funds are down 8% this month. Nobody explains rupee cost averaging in simple Hindi inside the app. When people see red numbers, their natural instinct is flight, not buy the dip. Groww needs to educate users right on the home screen during market falls.",
+          "source_platform": "help_forum",
+          "upvotes": 77,
+          "url": "https://tradingqna.com/c/mutual-funds/",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "reddit": 1,
+        "help_forum": 1
+      }
+    },
+    {
+      "Opportunity Area": "Goal Disconnection",
+      "Description": "SIPs started without a clear financial goal feel arbitrary. Without a visible connection between monthly debits and a future milestone (home, education, emergency fund), the SIP feels like an expense rather than progress toward something meaningful.",
+      "Evidence Volume": 2,
+      "Source Diversity": "2/6",
+      "Diversity Raw": 2,
+      "Severity Score": 3.25,
+      "Abandonment Rate": "0.0%",
+      "Abandonment Raw": 0.0,
+      "Voiced Count": 1,
+      "Inferred Count": 1,
+      "Composite Score": 7.14,
+      "Top Quotes": [
+        {
+          "raw_item_id": "4063c697-030b-4d03-84d9-1589453fd690",
+          "text": "I set up two ₹2,500 SIPs in 2023 because of peer pressure at office. Every month on the 5th, ₹5,000 gets debited from my HDFC account. But I don't even know what I am saving for. It just feels like a monthly tax or bill payment that reduces my disposable income. Thinking of stopping both.",
+          "source_platform": "reddit",
+          "upvotes": 115,
+          "url": "https://www.reddit.com/r/IndiaInvestments/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "76bfd610-e931-4082-85a1-435a3bf5d23e",
+          "text": "Groww makes it super easy to start a SIP with 1-click, but there is zero goal tagging. If I could tag my SIP as 'Sister's Wedding 2026' or 'Car Down Payment', I would have a psychological reason not to cancel when money gets tight.",
+          "source_platform": "app_store",
+          "upvotes": 53,
+          "url": "https://apps.apple.com/in/app/groww-stocks-mutual-fund-upi/id1404871703",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "reddit": 1,
+        "app_store": 1
+      }
+    },
+    {
+      "Opportunity Area": "Financial Literacy Gap",
+      "Description": "Users don't understand NAV, units, CAGR vs absolute returns, or why their portfolio is 'down' despite adding money monthly. The gap between what the app shows and what users can interpret creates confusion and distrust.",
+      "Evidence Volume": 5,
+      "Source Diversity": "3/6",
+      "Diversity Raw": 3,
+      "Severity Score": 3.0,
+      "Abandonment Rate": "0.0%",
+      "Abandonment Raw": 0.0,
+      "Voiced Count": 4,
+      "Inferred Count": 1,
+      "Composite Score": 16.13,
+      "Top Quotes": [
+        {
+          "raw_item_id": "0e6b8bee-d454-4121-8ce5-4b1dd55ffd42",
+          "text": "Nobody told me about expense ratio, exit loads, and stamp duty when setting up the SIP. When I checked the AMC statement, there are deductions I never saw in the promotional banners. First time investors need radical transparency on fees before they commit for 12 months.",
+          "source_platform": "youtube",
+          "upvotes": 105,
+          "url": "https://www.youtube.com/results?search_query=groww+sip+hidden+charges",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "7d035545-4af2-4444-b6b2-7da9fae6b554",
+          "text": "Can someone explain why my total invested amount increased by ₹2,000 this month after SIP debit, but my total portfolio current value went DOWN by ₹500? Did Groww steal my money or charges deducted? Nobody explains NAV and units clearly in the statement.",
+          "source_platform": "help_forum",
+          "upvotes": 88,
+          "url": "https://tradingqna.com/c/mutual-funds/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "3547ea1d-ee19-455b-9582-e715345aea9d",
+          "text": "New investors are panicking because midcap funds are down 8% this month. Nobody explains rupee cost averaging in simple Hindi inside the app. When people see red numbers, their natural instinct is flight, not buy the dip. Groww needs to educate users right on the home screen during market falls.",
+          "source_platform": "help_forum",
+          "upvotes": 77,
+          "url": "https://tradingqna.com/c/mutual-funds/",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "play_store": 1,
+        "help_forum": 3,
+        "youtube": 1
+      }
+    },
+    {
+      "Opportunity Area": "Life Event Disruption",
+      "Description": "Job loss, unexpected expenses, salary delays, marriage costs, or lifestyle inflation causes users to pause SIPs 'temporarily'. Most never restart because the psychological barrier to resuming is higher than starting fresh.",
+      "Evidence Volume": 3,
+      "Source Diversity": "3/6",
+      "Diversity Raw": 3,
+      "Severity Score": 2.83,
+      "Abandonment Rate": "67.0%",
+      "Abandonment Raw": 0.67,
+      "Voiced Count": 2,
+      "Inferred Count": 1,
+      "Composite Score": 11.78,
+      "Top Quotes": [
+        {
+          "raw_item_id": "1f7e9ddf-d847-4cd6-8016-61bbb37cfa4b",
+          "text": "Lost my job in tech layoffs last November. Had to stop my ₹10k monthly SIP immediately to preserve emergency cash. It's been 6 months, got a new job now, but starting a SIP again feels like a chore. The friction to restart is so much higher than when I first joined.",
+          "source_platform": "reddit",
+          "upvotes": 165,
+          "url": "https://www.reddit.com/r/IndiaInvestments/",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "658185ce-5d99-4de0-a57a-4fc1502491e5",
+          "text": "I wanted to pause my SIP for just 2 months because of festival expenses, but the app only had a 'Delete / Cancel SIP' button. There was no clear 'Skip 1 installment' or 'Pause for 60 days' feature easily accessible. So I cancelled it, and now 5 months later I still haven't restarted.",
+          "source_platform": "app_store",
+          "upvotes": 73,
+          "url": "https://apps.apple.com/in/app/groww-stocks-mutual-fund-upi/id1404871703",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "705dd25b-5cf9-4bfb-a6c1-f8690a99934f",
+          "text": "Salary got delayed by 10 days this month due to company payroll restructuring. The SIP debit date fell right on the 5th when my account had ₹800 balance. Instead of an easy alert 'Would you like to shift your debit date to 15th?', the SIP just failed. Most users have fluctuating cashflows.",
+          "source_platform": "web",
+          "upvotes": 44,
+          "url": "https://www.google.com/search?q=why+first+time+investors+stop+sip+india",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "web": 1,
+        "reddit": 1,
+        "app_store": 1
+      }
+    },
+    {
+      "Opportunity Area": "App Experience Friction",
+      "Description": "Confusing portfolio screens, unclear return displays, misleading notifications, missing progress indicators, or aggressive upselling push users toward disengagement. The app becomes a source of anxiety rather than confidence.",
+      "Evidence Volume": 5,
+      "Source Diversity": "3/6",
+      "Diversity Raw": 3,
+      "Severity Score": 2.5,
+      "Abandonment Rate": "40.0%",
+      "Abandonment Raw": 0.4,
+      "Voiced Count": 3,
+      "Inferred Count": 2,
+      "Composite Score": 13.44,
+      "Top Quotes": [
+        {
+          "raw_item_id": "1f0eb7b3-6305-452b-afae-0838517bb75a",
+          "text": "My bank auto-debit failed once due to server issue at 2 AM. Instead of retrying gracefully, Groww immediately showed 'SIP Missed' and my bank charged ₹295 ECS bounce penalty! That penalty is more than the profit I made in 3 months. Worst experience, cancelled the mandate.",
+          "source_platform": "play_store",
+          "upvotes": 182,
+          "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "658185ce-5d99-4de0-a57a-4fc1502491e5",
+          "text": "I wanted to pause my SIP for just 2 months because of festival expenses, but the app only had a 'Delete / Cancel SIP' button. There was no clear 'Skip 1 installment' or 'Pause for 60 days' feature easily accessible. So I cancelled it, and now 5 months later I still haven't restarted.",
+          "source_platform": "app_store",
+          "upvotes": 73,
+          "url": "https://apps.apple.com/in/app/groww-stocks-mutual-fund-upi/id1404871703",
+          "evidence_span": null
+        },
+        {
+          "raw_item_id": "65356f8b-2e36-41b0-8791-282480b4be78",
+          "text": "The terms XIRR, CAGR, Absolute Returns, and 1-day returns are so confusing. One screen shows +12% XIRR, but my overall profit in rupees is only ₹400 on ₹20,000 invested. First time investors have no idea which metric matters and feel deceived.",
+          "source_platform": "play_store",
+          "upvotes": 61,
+          "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+          "evidence_span": null
+        }
+      ],
+      "Platform Breakdown": {
+        "web": 1,
+        "play_store": 2,
+        "app_store": 2
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "5a4fc526-f51f-4845-bffd-248a58b139e7",
+      "source": "reddit",
+      "app_name": "",
+      "text": "When the market crashed 3% on election results day, my Groww mutual fund portfolio lost ₹14,000. I panicked and hit 'Cancel SIP' immediately. I cannot afford to lose my hard-earned salary. Will wait until the market is completely safe and rising before investing again.",
+      "date": "2024-06-05",
+      "upvotes": 210,
+      "url": "https://www.reddit.com/r/IndianStreetBets/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "cancelled",
+      "drop_type": "voluntary",
+      "problem_types": [
+        "market_anxiety"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "already_paused"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "market_downturn",
+        "news_media"
+      ],
+      "retention_risk": "already_churned",
+      "abandoned_app": true,
+      "pattern_type": "voiced",
+      "primary_area": "Market Volatility Panic",
+      "assigned_areas": [
+        "Market Volatility Panic"
+      ]
+    },
+    {
+      "id": "1f0eb7b3-6305-452b-afae-0838517bb75a",
+      "source": "play_store",
+      "app_name": "",
+      "text": "My bank auto-debit failed once due to server issue at 2 AM. Instead of retrying gracefully, Groww immediately showed 'SIP Missed' and my bank charged ₹295 ECS bounce penalty! That penalty is more than the profit I made in 3 months. Worst experience, cancelled the mandate.",
+      "date": "2024-02-05",
+      "upvotes": 182,
+      "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "cancelled",
+      "drop_type": "involuntary",
+      "problem_types": [
+        "app_confusion",
+        "trust_deficit"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "already_paused"
+      ],
+      "emotional_state": "regretful",
+      "trigger_types": [
+        "app_experience"
+      ],
+      "retention_risk": "already_churned",
+      "abandoned_app": true,
+      "pattern_type": "voiced",
+      "primary_area": "App Experience Friction",
+      "assigned_areas": [
+        "App Experience Friction",
+        "Trust & Transparency Deficit"
+      ]
+    },
+    {
+      "id": "1f7e9ddf-d847-4cd6-8016-61bbb37cfa4b",
+      "source": "reddit",
+      "app_name": "",
+      "text": "Lost my job in tech layoffs last November. Had to stop my ₹10k monthly SIP immediately to preserve emergency cash. It's been 6 months, got a new job now, but starting a SIP again feels like a chore. The friction to restart is so much higher than when I first joined.",
+      "date": "2024-05-02",
+      "upvotes": 165,
+      "url": "https://www.reddit.com/r/IndiaInvestments/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "cancelled",
+      "drop_type": "voluntary",
+      "problem_types": [
+        "financial_pressure"
+      ],
+      "lifecycle_stage": "post_dropout",
+      "behavioral_signals": [
+        "already_paused"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "life_event",
+        "financial_need"
+      ],
+      "retention_risk": "already_churned",
+      "abandoned_app": true,
+      "pattern_type": "voiced",
+      "primary_area": "Life Event Disruption",
+      "assigned_areas": [
+        "Life Event Disruption"
+      ]
+    },
+    {
+      "id": "28a8735d-0731-4354-b540-6da59bbd81cb",
+      "source": "reddit",
+      "app_name": "",
+      "text": "Started my first SIP of ₹3,000/month in Nifty 50 Index fund on Groww 3 months back. Invested ₹9,000 total and current value is showing ₹8,820 (-2%). I thought mutual funds give 15% guaranteed return. My bank FD at least never goes negative. Thinking of stopping this SIP and keeping money in savings account.",
+      "date": "2024-02-15",
+      "upvotes": 142,
+      "url": "https://www.reddit.com/r/IndiaInvestments/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "returns_disappointment",
+        "market_anxiety"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "checking_daily",
+        "comparing_returns",
+        "considering_pause"
+      ],
+      "emotional_state": "disappointed",
+      "trigger_types": [
+        "market_downturn"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Unrealistic Return Expectations",
+      "assigned_areas": [
+        "Unrealistic Return Expectations",
+        "Early Portfolio Anxiety"
+      ]
+    },
+    {
+      "id": "fd7287f8-7e87-4114-825e-551897c880ad",
+      "source": "youtube",
+      "app_name": "",
+      "text": "Started investing ₹10,000/month across 4 funds because fin-influencers on Instagram hyped Small Cap funds non-stop. Now small caps are correcting and those same influencers have stopped talking about mutual funds. I feel like an idiot who got trapped by social media hype.",
+      "date": "2024-02-28",
+      "upvotes": 134,
+      "url": "https://www.youtube.com/results?search_query=groww+smallcap+sip",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "peer_pressure",
+        "returns_disappointment"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "seeking_validation",
+        "considering_pause"
+      ],
+      "emotional_state": "regretful",
+      "trigger_types": [
+        "peer_influence",
+        "news_media"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Social Proof Dependency",
+      "assigned_areas": [
+        "Social Proof Dependency",
+        "Unrealistic Return Expectations"
+      ]
+    },
+    {
+      "id": "97aba7d8-8260-49b1-ad72-981327efb4d9",
+      "source": "reddit",
+      "app_name": "",
+      "text": "My friend put ₹50,000 in Tata Motors stock and made 40% in 4 months. I put ₹5,000 every month in a Groww Large Cap SIP and my return is 4.2%. I feel like I'm wasting my youth on safe index funds while inflation eats everything. Considering stopping SIP to do direct equity.",
+      "date": "2024-04-18",
+      "upvotes": 121,
+      "url": "https://www.reddit.com/r/IndianStreetBets/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "comparison_regret"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "comparing_returns",
+        "considering_pause"
+      ],
+      "emotional_state": "regretful",
+      "trigger_types": [
+        "peer_influence"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Comparison & Regret Spiral",
+      "assigned_areas": [
+        "Comparison & Regret Spiral"
+      ]
+    },
+    {
+      "id": "4063c697-030b-4d03-84d9-1589453fd690",
+      "source": "reddit",
+      "app_name": "",
+      "text": "I set up two ₹2,500 SIPs in 2023 because of peer pressure at office. Every month on the 5th, ₹5,000 gets debited from my HDFC account. But I don't even know what I am saving for. It just feels like a monthly tax or bill payment that reduces my disposable income. Thinking of stopping both.",
+      "date": "2024-04-10",
+      "upvotes": 115,
+      "url": "https://www.reddit.com/r/IndiaInvestments/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "goal_disconnect",
+        "peer_pressure"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "considering_pause"
+      ],
+      "emotional_state": "indifferent",
+      "trigger_types": [
+        "peer_influence",
+        "financial_need"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Goal Disconnection",
+      "assigned_areas": [
+        "Goal Disconnection",
+        "Social Proof Dependency"
+      ]
+    },
+    {
+      "id": "0e6b8bee-d454-4121-8ce5-4b1dd55ffd42",
+      "source": "youtube",
+      "app_name": "",
+      "text": "Nobody told me about expense ratio, exit loads, and stamp duty when setting up the SIP. When I checked the AMC statement, there are deductions I never saw in the promotional banners. First time investors need radical transparency on fees before they commit for 12 months.",
+      "date": "2024-03-08",
+      "upvotes": 105,
+      "url": "https://www.youtube.com/results?search_query=groww+sip+hidden+charges",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "trust_deficit",
+        "lack_of_understanding"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "comparing_returns"
+      ],
+      "emotional_state": "disappointed",
+      "trigger_types": [
+        "app_experience"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Trust & Transparency Deficit",
+      "assigned_areas": [
+        "Trust & Transparency Deficit",
+        "Financial Literacy Gap"
+      ]
+    },
+    {
+      "id": "d75bef45-df3f-461f-8f89-4b2a4cad615d",
+      "source": "reddit",
+      "app_name": "",
+      "text": "My colleague who started SIP at the same time told me he stopped his SIP and put money into IPOs and F&O trading because mutual funds are 'too slow'. I am getting FOMO seeing people make 20% in two days while my Groww SIP gives 8% annualized.",
+      "date": "2024-03-15",
+      "upvotes": 98,
+      "url": "https://www.reddit.com/r/IndianStreetBets/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "comparison_regret",
+        "peer_pressure"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "comparing_returns",
+        "considering_pause"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "peer_influence"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Social Proof Dependency",
+      "assigned_areas": [
+        "Social Proof Dependency",
+        "Comparison & Regret Spiral"
+      ]
+    },
+    {
+      "id": "06804d55-d7ab-48fa-8c21-7950210e22cf",
+      "source": "youtube",
+      "app_name": "",
+      "text": "All finance YouTubers said SIP compounding will make you rich in 1 year. I have put ₹5,000 every month for 6 months in Parag Parikh Flexi Cap. Return is only ₹850 profit after 6 months. That's less than my credit card cashback. What is the hype about? Definitely paused my SIP.",
+      "date": "2024-01-20",
+      "upvotes": 95,
+      "url": "https://www.youtube.com/results?search_query=groww+sip+mutual+funds",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "paused",
+      "drop_type": "voluntary",
+      "problem_types": [
+        "returns_disappointment",
+        "comparison_regret"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "comparing_returns",
+        "already_paused"
+      ],
+      "emotional_state": "disappointed",
+      "trigger_types": [
+        "peer_influence",
+        "news_media"
+      ],
+      "retention_risk": "already_churned",
+      "abandoned_app": true,
+      "pattern_type": "voiced",
+      "primary_area": "Unrealistic Return Expectations",
+      "assigned_areas": [
+        "Unrealistic Return Expectations",
+        "Comparison & Regret Spiral"
+      ]
+    },
+    {
+      "id": "7d035545-4af2-4444-b6b2-7da9fae6b554",
+      "source": "help_forum",
+      "app_name": "",
+      "text": "Can someone explain why my total invested amount increased by ₹2,000 this month after SIP debit, but my total portfolio current value went DOWN by ₹500? Did Groww steal my money or charges deducted? Nobody explains NAV and units clearly in the statement.",
+      "date": "2024-01-14",
+      "upvotes": 88,
+      "url": "https://tradingqna.com/c/mutual-funds/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "lack_of_understanding",
+        "trust_deficit"
+      ],
+      "lifecycle_stage": "first_month",
+      "behavioral_signals": [
+        "seeking_validation"
+      ],
+      "emotional_state": "confused",
+      "trigger_types": [
+        "app_experience",
+        "self_doubt"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Financial Literacy Gap",
+      "assigned_areas": [
+        "Financial Literacy Gap",
+        "Trust & Transparency Deficit"
+      ]
+    },
+    {
+      "id": "082b444f-35ae-42b5-af3f-bbc6c5d054c2",
+      "source": "web",
+      "app_name": "",
+      "text": "Are mutual funds really safe on Groww? What happens to my SIP units if Groww shuts down tomorrow? None of my family members invest in mutual funds, they only trust Post Office NSC and SBI Fixed Deposits. I am scared to keep debiting ₹5,000 every month without a physical branch to visit.",
+      "date": "2024-01-10",
+      "upvotes": 82,
+      "url": "https://www.google.com/search?q=is+groww+safe+for+sip+mutual+funds",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "trust_deficit"
+      ],
+      "lifecycle_stage": "first_month",
+      "behavioral_signals": [
+        "seeking_validation"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "self_doubt",
+        "peer_influence"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Trust & Transparency Deficit",
+      "assigned_areas": [
+        "Trust & Transparency Deficit"
+      ]
+    },
+    {
+      "id": "3547ea1d-ee19-455b-9582-e715345aea9d",
+      "source": "help_forum",
+      "app_name": "",
+      "text": "New investors are panicking because midcap funds are down 8% this month. Nobody explains rupee cost averaging in simple Hindi inside the app. When people see red numbers, their natural instinct is flight, not buy the dip. Groww needs to educate users right on the home screen during market falls.",
+      "date": "2024-05-12",
+      "upvotes": 77,
+      "url": "https://tradingqna.com/c/mutual-funds/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "market_anxiety",
+        "lack_of_understanding"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "seeking_validation",
+        "considering_pause"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "market_downturn"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "inferred",
+      "primary_area": "Market Volatility Panic",
+      "assigned_areas": [
+        "Market Volatility Panic",
+        "Financial Literacy Gap"
+      ]
+    },
+    {
+      "id": "658185ce-5d99-4de0-a57a-4fc1502491e5",
+      "source": "app_store",
+      "app_name": "",
+      "text": "I wanted to pause my SIP for just 2 months because of festival expenses, but the app only had a 'Delete / Cancel SIP' button. There was no clear 'Skip 1 installment' or 'Pause for 60 days' feature easily accessible. So I cancelled it, and now 5 months later I still haven't restarted.",
+      "date": "2024-01-30",
+      "upvotes": 73,
+      "url": "https://apps.apple.com/in/app/groww-stocks-mutual-fund-upi/id1404871703",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "cancelled",
+      "drop_type": "voluntary",
+      "problem_types": [
+        "app_confusion",
+        "financial_pressure"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "already_paused"
+      ],
+      "emotional_state": "disappointed",
+      "trigger_types": [
+        "app_experience",
+        "life_event"
+      ],
+      "retention_risk": "already_churned",
+      "abandoned_app": true,
+      "pattern_type": "voiced",
+      "primary_area": "App Experience Friction",
+      "assigned_areas": [
+        "App Experience Friction",
+        "Life Event Disruption"
+      ]
+    },
+    {
+      "id": "08d2687a-004d-40fb-94a7-09b399109bb0",
+      "source": "play_store",
+      "app_name": "",
+      "text": "I open the Groww app every single day during lunch break to check my portfolio. Whenever the market dips even 0.5%, my portfolio turns red and my heartbeat spikes. It's only been 2 months since I started investing ₹5k every month. It is causing me so much daily anxiety.",
+      "date": "2024-03-01",
+      "upvotes": 68,
+      "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "market_anxiety"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "checking_daily"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "market_downturn",
+        "self_doubt"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Early Portfolio Anxiety",
+      "assigned_areas": [
+        "Early Portfolio Anxiety"
+      ]
+    },
+    {
+      "id": "65356f8b-2e36-41b0-8791-282480b4be78",
+      "source": "play_store",
+      "app_name": "",
+      "text": "The terms XIRR, CAGR, Absolute Returns, and 1-day returns are so confusing. One screen shows +12% XIRR, but my overall profit in rupees is only ₹400 on ₹20,000 invested. First time investors have no idea which metric matters and feel deceived.",
+      "date": "2024-04-02",
+      "upvotes": 61,
+      "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "lack_of_understanding",
+        "app_confusion"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "seeking_validation"
+      ],
+      "emotional_state": "confused",
+      "trigger_types": [
+        "app_experience"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Financial Literacy Gap",
+      "assigned_areas": [
+        "Financial Literacy Gap",
+        "App Experience Friction"
+      ]
+    },
+    {
+      "id": "6139d19d-5de0-4332-95c4-4b0034424d84",
+      "source": "help_forum",
+      "app_name": "",
+      "text": "Why is my Flexi Cap fund delivering 11% while another fund in the same category gave 19%? I feel like I picked the wrong fund on Groww. Should I stop this SIP, redeem everything, and start fresh in the top-ranking fund? High switching friction and capital gains tax confuse me.",
+      "date": "2024-02-22",
+      "upvotes": 59,
+      "url": "https://tradingqna.com/c/mutual-funds/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "comparison_regret",
+        "lack_of_understanding"
+      ],
+      "lifecycle_stage": "late_7_12m",
+      "behavioral_signals": [
+        "comparing_returns",
+        "seeking_validation"
+      ],
+      "emotional_state": "confused",
+      "trigger_types": [
+        "self_doubt"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Comparison & Regret Spiral",
+      "assigned_areas": [
+        "Comparison & Regret Spiral",
+        "Financial Literacy Gap"
+      ]
+    },
+    {
+      "id": "76bfd610-e931-4082-85a1-435a3bf5d23e",
+      "source": "app_store",
+      "app_name": "",
+      "text": "Groww makes it super easy to start a SIP with 1-click, but there is zero goal tagging. If I could tag my SIP as 'Sister's Wedding 2026' or 'Car Down Payment', I would have a psychological reason not to cancel when money gets tight.",
+      "date": "2024-03-22",
+      "upvotes": 53,
+      "url": "https://apps.apple.com/in/app/groww-stocks-mutual-fund-upi/id1404871703",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "goal_disconnect",
+        "app_confusion"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "seeking_validation"
+      ],
+      "emotional_state": "confused",
+      "trigger_types": [
+        "app_experience"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "inferred",
+      "primary_area": "Goal Disconnection",
+      "assigned_areas": [
+        "Goal Disconnection",
+        "App Experience Friction"
+      ]
+    },
+    {
+      "id": "705dd25b-5cf9-4bfb-a6c1-f8690a99934f",
+      "source": "web",
+      "app_name": "",
+      "text": "Salary got delayed by 10 days this month due to company payroll restructuring. The SIP debit date fell right on the 5th when my account had ₹800 balance. Instead of an easy alert 'Would you like to shift your debit date to 15th?', the SIP just failed. Most users have fluctuating cashflows.",
+      "date": "2024-03-18",
+      "upvotes": 44,
+      "url": "https://www.google.com/search?q=why+first+time+investors+stop+sip+india",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "financial_pressure",
+        "app_confusion"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "considering_pause"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "financial_need",
+        "life_event"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "inferred",
+      "primary_area": "Life Event Disruption",
+      "assigned_areas": [
+        "Life Event Disruption",
+        "App Experience Friction"
+      ]
+    },
+    {
+      "id": "mock-rev-01-social-proof",
+      "source": "youtube",
+      "app_name": "Groww YouTube Explainer",
+      "text": "Started ₹5,000 monthly SIP in Quant Small Cap purely because finance creators on Instagram kept hyping it as a guaranteed multibagger. Now that small caps are dipping, those creators are silent, and I realize I have no clue why I picked this fund. Feeling foolish for blindly following online trends.",
+      "date": "2024-05-18",
+      "upvotes": 145,
+      "url": "https://www.youtube.com/results?search_query=groww+smallcap+sip",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "peer_pressure"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "seeking_validation",
+        "considering_pause"
+      ],
+      "emotional_state": "disappointed",
+      "trigger_types": [
+        "peer_influence",
+        "news_media"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Social Proof Dependency",
+      "assigned_areas": [
+        "Social Proof Dependency"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-02-unrealistic-returns",
+      "source": "reddit",
+      "app_name": "r/IndiaInvestments",
+      "text": "Put ₹4,000 every month into an equity mutual fund for 3 months expecting 15% annual return right away. Looked at the portfolio today and it is negative ₹240. My bank savings account pays interest every quarter without negative surprises. Really considering stopping this SIP.",
+      "date": "2024-04-12",
+      "upvotes": 128,
+      "url": "https://www.reddit.com/r/IndiaInvestments/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "returns_disappointment"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "comparing_returns",
+        "considering_pause"
+      ],
+      "emotional_state": "disappointed",
+      "trigger_types": [
+        "market_downturn"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Unrealistic Return Expectations",
+      "assigned_areas": [
+        "Unrealistic Return Expectations"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-03-trust-deficit",
+      "source": "help_forum",
+      "app_name": "TradingQ&A",
+      "text": "Noticed deductions for AMC expense ratio and stamp duty on my monthly statement that were never disclosed during SIP onboarding. First-time investors deserve upfront clarity on total deductions before committing to monthly debits.",
+      "date": "2024-03-24",
+      "upvotes": 92,
+      "url": "https://tradingqna.com/c/mutual-funds/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "trust_deficit"
+      ],
+      "lifecycle_stage": "first_month",
+      "behavioral_signals": [
+        "seeking_validation"
+      ],
+      "emotional_state": "confused",
+      "trigger_types": [
+        "app_experience"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Trust & Transparency Deficit",
+      "assigned_areas": [
+        "Trust & Transparency Deficit"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-04-comparison-regret",
+      "source": "reddit",
+      "app_name": "r/IndianStreetBets",
+      "text": "Been doing a ₹6,000/month large-cap SIP for 5 months with 5% annualized return, but seeing friends make 25% on momentum stocks and gold makes my SIP feel painfully sluggish. Constant FOMO is making me second-guess sticking with mutual funds.",
+      "date": "2024-05-02",
+      "upvotes": 114,
+      "url": "https://www.reddit.com/r/IndianStreetBets/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "comparison_regret"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "comparing_returns"
+      ],
+      "emotional_state": "regretful",
+      "trigger_types": [
+        "peer_influence"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Comparison & Regret Spiral",
+      "assigned_areas": [
+        "Comparison & Regret Spiral"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-05-portfolio-anxiety",
+      "source": "play_store",
+      "app_name": "Groww Google Play",
+      "text": "Installed Groww 2 months ago and I find myself opening the app multiple times every day. The moment Nifty is down 0.8%, my heart drops seeing the red portfolio balance. The daily anxiety is making it hard to commit for the long haul.",
+      "date": "2024-02-28",
+      "upvotes": 76,
+      "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "market_anxiety"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "checking_daily"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "self_doubt"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Early Portfolio Anxiety",
+      "assigned_areas": [
+        "Early Portfolio Anxiety"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-06-volatility-panic",
+      "source": "reddit",
+      "app_name": "r/mutualfunds",
+      "text": "During the mid-cap correction last week, my portfolio lost ₹11,000 in two days. Panicked and cancelled my active SIP immediately because I could not risk losing more savings. Will wait until markets stabilize before re-entering.",
+      "date": "2024-06-08",
+      "upvotes": 188,
+      "url": "https://www.reddit.com/r/mutualfunds/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "cancelled",
+      "drop_type": "voluntary",
+      "problem_types": [
+        "market_anxiety"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "already_paused"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "market_downturn"
+      ],
+      "retention_risk": "already_churned",
+      "abandoned_app": true,
+      "pattern_type": "voiced",
+      "primary_area": "Market Volatility Panic",
+      "assigned_areas": [
+        "Market Volatility Panic"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-07-goal-disconnect",
+      "source": "app_store",
+      "app_name": "Groww App Store",
+      "text": "₹5,000 debited on the 5th of every month, but because it is not tagged to any specific goal like buying a laptop or emergency fund, it just feels like an arbitrary bill reducing my monthly budget. Tempted to stop it.",
+      "date": "2024-04-19",
+      "upvotes": 62,
+      "url": "https://apps.apple.com/in/app/groww-stocks-mutual-fund-upi/id1404871703",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "goal_disconnect"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "considering_pause"
+      ],
+      "emotional_state": "indifferent",
+      "trigger_types": [
+        "self_doubt"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "inferred",
+      "primary_area": "Goal Disconnection",
+      "assigned_areas": [
+        "Goal Disconnection"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-08-literacy-gap",
+      "source": "help_forum",
+      "app_name": "TradingQ&A",
+      "text": "Can someone explain the difference between XIRR and Absolute Return? My app shows +14% XIRR but the actual rupee profit is only ₹320 on ₹10,000 invested. It is very confusing for beginners to evaluate actual progress.",
+      "date": "2024-03-10",
+      "upvotes": 85,
+      "url": "https://tradingqna.com/c/mutual-funds/",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "continuing",
+      "drop_type": "unknown",
+      "problem_types": [
+        "lack_of_understanding"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "seeking_validation"
+      ],
+      "emotional_state": "confused",
+      "trigger_types": [
+        "app_experience"
+      ],
+      "retention_risk": "med",
+      "abandoned_app": false,
+      "pattern_type": "voiced",
+      "primary_area": "Financial Literacy Gap",
+      "assigned_areas": [
+        "Financial Literacy Gap"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-09-life-event",
+      "source": "web",
+      "app_name": "Web Forum Discussion",
+      "text": "Had sudden medical bills for my parents this month and needed to conserve cash. The app did not offer a simple \"Pause for 60 days\" option, so I was forced to delete the SIP mandate entirely. Friction to restart is high.",
+      "date": "2024-05-25",
+      "upvotes": 51,
+      "url": "https://www.google.com/search?q=why+first+time+investors+stop+sip+india",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "cancelled",
+      "drop_type": "voluntary",
+      "problem_types": [
+        "financial_pressure"
+      ],
+      "lifecycle_stage": "mid_4_6m",
+      "behavioral_signals": [
+        "already_paused"
+      ],
+      "emotional_state": "anxious",
+      "trigger_types": [
+        "life_event",
+        "financial_need"
+      ],
+      "retention_risk": "already_churned",
+      "abandoned_app": true,
+      "pattern_type": "voiced",
+      "primary_area": "Life Event Disruption",
+      "assigned_areas": [
+        "Life Event Disruption"
+      ],
+      "is_mock": true
+    },
+    {
+      "id": "mock-rev-10-app-friction",
+      "source": "play_store",
+      "app_name": "Groww Google Play",
+      "text": "Auto-debit failed because salary was delayed by 3 days. Instead of giving me a 5-day grace period to pay via UPI, Groww marked the SIP as failed and my bank charged a ₹295 return penalty. The mandate system needs better flexibility.",
+      "date": "2024-02-14",
+      "upvotes": 174,
+      "url": "https://play.google.com/store/apps/details?id=com.nextbillion.groww",
+      "relevant": true,
+      "on_topic": true,
+      "retention_relevant": true,
+      "sip_status": "failed",
+      "drop_type": "involuntary",
+      "problem_types": [
+        "app_confusion"
+      ],
+      "lifecycle_stage": "early_1_3m",
+      "behavioral_signals": [
+        "already_paused"
+      ],
+      "emotional_state": "regretful",
+      "trigger_types": [
+        "app_experience"
+      ],
+      "retention_risk": "high",
+      "abandoned_app": true,
+      "pattern_type": "voiced",
+      "primary_area": "App Experience Friction",
+      "assigned_areas": [
+        "App Experience Friction"
+      ],
+      "is_mock": true
+    }
+  ],
+  "report_markdown": "# Groww SIP Retention Research — Synthesis Report\n\n> **Autonomous Discovery Engine Research Deliverable**  \n> **Strategic Objective:** Increase 12-Month Active SIP Retention for First-Time Mutual Fund Investors  \n> **Date:** October 25, 2026 · **Corpus Size:** 19 items across 6 channels\n\n---\n\n## Executive Summary\n\nAnalysis of **19 user feedback items** across 6 platforms identifies **10 distinct friction clusters** driving first-time mutual fund investor SIP dropout, representing 19 grounded signals. The single highest-leverage retention opportunity is **'Trust & Transparency Deficit'**, accounting for 4 validated reports (21.1% of volume) with a severity rating of 3.25/5.0 across 4 independent platforms. Furthermore, SIP abandonment is most acute in **'Life Event Disruption'**, where 67.0% of users report stopping or cancelling their recurring SIP installment within the first 12 months.\n\n---\n\n## Top Opportunity Areas\n\n| Rank | Opportunity Area | Evidence Volume | Severity (1-5.0) | Platforms | Abandonment Rate | Voiced / Inferred |\n|:---:|:---|:---:|:---:|:---:|:---:|:---:|\n| **#1** | **Trust & Transparency Deficit** | 4 | High (3.25) | 4/6 | 25.0% | 4 / 0 |\n| **#2** | **Financial Literacy Gap** | 5 | High (3.00) | 3/6 | 0.0% | 4 / 1 |\n| **#3** | **Comparison & Regret Spiral** | 4 | High (3.25) | 3/6 | 25.0% | 4 / 0 |\n| **#4** | **App Experience Friction** | 5 | High (2.50) | 3/6 | 40.0% | 3 / 2 |\n| **#5** | **Social Proof Dependency** | 3 | High (4.50) | 2/6 | 0.0% | 3 / 0 |\n| **#6** | **Life Event Disruption** | 3 | High (2.83) | 3/6 | 67.0% | 2 / 1 |\n| **#7** | **Unrealistic Return Expectations** | 3 | High (3.67) | 2/6 | 33.0% | 3 / 0 |\n| **#8** | **Early Portfolio Anxiety** | 2 | High (3.25) | 2/6 | 0.0% | 2 / 0 |\n| **#9** | **Market Volatility Panic** | 2 | High (3.25) | 2/6 | 50.0% | 1 / 1 |\n| **#10** | **Goal Disconnection** | 2 | High (3.25) | 2/6 | 0.0% | 1 / 1 |\n\n### 1. Trust & Transparency Deficit\n\n- **Description:** Users feel they don't understand where their money is going, what fees or expense ratios they're paying, or whether the platform is acting in their interest. Hidden charges or unclear fund selection erode long-term trust.\n- **Evidence Volume:** 4 items across 4 platforms (Web, Play Store, Help Forum, Youtube)\n- **Severity:** High (3.25 / 5.0) · **SIP Abandonment Rate:** 25.0%\n- **Pattern Distribution:** 4 voiced (explicit complaints) vs. 0 inferred (latent anxiety)\n\n**Representative Customer Quotes:**\n\n> \"My bank auto-debit failed once due to server issue at 2 AM. Instead of retrying gracefully, Groww immediately showed 'SIP Missed' and my bank charged ₹295 ECS bounce penalty! That penalty is more than the profit I made in 3 months. Worst experience, cancelled the mandate.\"\n> — *Play Store, 182 upvotes*\n>\n> \"Nobody told me about expense ratio, exit loads, and stamp duty when setting up the SIP. When I checked the AMC statement, there are deductions I never saw in the promotional banners. First time investors need radical transparency on fees before they commit for 12 months.\"\n> — *Youtube, 105 upvotes*\n>\n> \"Can someone explain why my total invested amount increased by ₹2,000 this month after SIP debit, but my total portfolio current value went DOWN by ₹500? Did Groww steal my money or charges deducted? Nobody explains NAV and units clearly in the statement.\"\n> — *Help Forum, 88 upvotes*\n\n### 2. Financial Literacy Gap\n\n- **Description:** Users don't understand NAV, units, CAGR vs absolute returns, or why their portfolio is 'down' despite adding money monthly. The gap between what the app shows and what users can interpret creates confusion and distrust.\n- **Evidence Volume:** 5 items across 3 platforms (Play Store, Help Forum, Youtube)\n- **Severity:** High (3.00 / 5.0) · **SIP Abandonment Rate:** 0.0%\n- **Pattern Distribution:** 4 voiced (explicit complaints) vs. 1 inferred (latent anxiety)\n\n**Representative Customer Quotes:**\n\n> \"Nobody told me about expense ratio, exit loads, and stamp duty when setting up the SIP. When I checked the AMC statement, there are deductions I never saw in the promotional banners. First time investors need radical transparency on fees before they commit for 12 months.\"\n> — *Youtube, 105 upvotes*\n>\n> \"Can someone explain why my total invested amount increased by ₹2,000 this month after SIP debit, but my total portfolio current value went DOWN by ₹500? Did Groww steal my money or charges deducted? Nobody explains NAV and units clearly in the statement.\"\n> — *Help Forum, 88 upvotes*\n>\n> \"New investors are panicking because midcap funds are down 8% this month. Nobody explains rupee cost averaging in simple Hindi inside the app. When people see red numbers, their natural instinct is flight, not buy the dip. Groww needs to educate users right on the home screen during market falls.\"\n> — *Help Forum, 77 upvotes*\n\n### 3. Comparison & Regret Spiral\n\n- **Description:** Comparing their fund's returns to a friend's stock pick, another fund, FD rates, or even gold creates regret and perceived opportunity cost. The 'grass is greener' effect makes their current SIP feel like the wrong choice.\n- **Evidence Volume:** 4 items across 3 platforms (Youtube, Reddit, Help Forum)\n- **Severity:** High (3.25 / 5.0) · **SIP Abandonment Rate:** 25.0%\n- **Pattern Distribution:** 4 voiced (explicit complaints) vs. 0 inferred (latent anxiety)\n\n**Representative Customer Quotes:**\n\n> \"My friend put ₹50,000 in Tata Motors stock and made 40% in 4 months. I put ₹5,000 every month in a Groww Large Cap SIP and my return is 4.2%. I feel like I'm wasting my youth on safe index funds while inflation eats everything. Considering stopping SIP to do direct equity.\"\n> — *Reddit, 121 upvotes*\n>\n> \"My colleague who started SIP at the same time told me he stopped his SIP and put money into IPOs and F&O trading because mutual funds are 'too slow'. I am getting FOMO seeing people make 20% in two days while my Groww SIP gives 8% annualized.\"\n> — *Reddit, 98 upvotes*\n>\n> \"All finance YouTubers said SIP compounding will make you rich in 1 year. I have put ₹5,000 every month for 6 months in Parag Parikh Flexi Cap. Return is only ₹850 profit after 6 months. That's less than my credit card cashback. What is the hype about? Definitely paused my SIP.\"\n> — *Youtube, 95 upvotes*\n\n### 4. App Experience Friction\n\n- **Description:** Confusing portfolio screens, unclear return displays, misleading notifications, missing progress indicators, or aggressive upselling push users toward disengagement. The app becomes a source of anxiety rather than confidence.\n- **Evidence Volume:** 5 items across 3 platforms (Web, Play Store, App Store)\n- **Severity:** High (2.50 / 5.0) · **SIP Abandonment Rate:** 40.0%\n- **Pattern Distribution:** 3 voiced (explicit complaints) vs. 2 inferred (latent anxiety)\n\n**Representative Customer Quotes:**\n\n> \"My bank auto-debit failed once due to server issue at 2 AM. Instead of retrying gracefully, Groww immediately showed 'SIP Missed' and my bank charged ₹295 ECS bounce penalty! That penalty is more than the profit I made in 3 months. Worst experience, cancelled the mandate.\"\n> — *Play Store, 182 upvotes*\n>\n> \"I wanted to pause my SIP for just 2 months because of festival expenses, but the app only had a 'Delete / Cancel SIP' button. There was no clear 'Skip 1 installment' or 'Pause for 60 days' feature easily accessible. So I cancelled it, and now 5 months later I still haven't restarted.\"\n> — *App Store, 73 upvotes*\n>\n> \"The terms XIRR, CAGR, Absolute Returns, and 1-day returns are so confusing. One screen shows +12% XIRR, but my overall profit in rupees is only ₹400 on ₹20,000 invested. First time investors have no idea which metric matters and feel deceived.\"\n> — *Play Store, 61 upvotes*\n\n### 5. Social Proof Dependency\n\n- **Description:** Investors who started because a friend, family member, or influencer told them to have no internal conviction. When that external validation fades or the influencer changes their stance, the user's commitment evaporates.\n- **Evidence Volume:** 3 items across 2 platforms (Reddit, Youtube)\n- **Severity:** High (4.50 / 5.0) · **SIP Abandonment Rate:** 0.0%\n- **Pattern Distribution:** 3 voiced (explicit complaints) vs. 0 inferred (latent anxiety)\n\n**Representative Customer Quotes:**\n\n> \"Started investing ₹10,000/month across 4 funds because fin-influencers on Instagram hyped Small Cap funds non-stop. Now small caps are correcting and those same influencers have stopped talking about mutual funds. I feel like an idiot who got trapped by social media hype.\"\n> — *Youtube, 134 upvotes*\n>\n> \"I set up two ₹2,500 SIPs in 2023 because of peer pressure at office. Every month on the 5th, ₹5,000 gets debited from my HDFC account. But I don't even know what I am saving for. It just feels like a monthly tax or bill payment that reduces my disposable income. Thinking of stopping both.\"\n> — *Reddit, 115 upvotes*\n>\n> \"My colleague who started SIP at the same time told me he stopped his SIP and put money into IPOs and F&O trading because mutual funds are 'too slow'. I am getting FOMO seeing people make 20% in two days while my Groww SIP gives 8% annualized.\"\n> — *Reddit, 98 upvotes*\n\n\n---\n\n## The Hidden Insight — Voiced vs. Inferred Gap\n\nThe most critical strategic blind spot in current retention efforts is the divergence between explicit user actions and latent psychological triggers. While explicit complaints often cite technical failures or fee structures, the data reveals a deeper, silent churn driver: **latent anxiety masked as disengagement**.\n\nA critical discovery from the multi-platform corpus is the divergence between explicit user actions and latent psychological triggers. In **'Market Volatility Panic'**, 50.0% of evidence exhibits **inferred behavioral patterns** (1 items).\n\nFirst-time mutual fund investors rarely submit support tickets saying 'I do not understand rupee cost averaging' or 'my compounding horizon was miscalibrated'. Instead, their anxiety manifests as compulsive daily portfolio tracking, silent disengagement, and comparison against fixed-income benchmarks. When monthly statements fail to deliver instant gratification in months 2–6, the SIP transitions from an exciting financial milestone into an annoying monthly cash drain, leading to unannounced pause or cancellation.\n\nThis \"silent churn\" is particularly dangerous because it bypasses traditional support channels. Users do not cancel due to a single bad interaction; they cancel because the *emotional value* of the investment has not yet materialized to justify the *cognitive load* of monitoring it. The gap between what the user *says* (e.g., \"I don't like the fees\") and what they *feel* (e.g., \"I am losing money and don't know why\") represents the primary opportunity for proactive, context-aware intervention.\n\n---\n\n## Open Questions for User Research\n\n1. **Expectations vs. Volatility:** What is the cognitive threshold of portfolio decline (e.g. -2% vs -5%) that triggers first-time SIP cancellation, and can proactive education buffer it?\n2. **Goal Anchoring:** Does linking a SIP to a named tangible milestone (e.g. 'Emergency Fund 2025') improve month-12 retention compared to unlabelled fund investing?\n3. **Payment Flexibility:** How many missed installments are due to salary delays vs active intent to quit, and would an automatic grace-period date adjuster retain these investors?\n4. **Benchmark Comparison:** How do novice investors compare mutual fund returns against FDs, crypto, or direct stocks, and how can Groww present risk-adjusted context effectively?\n\n---\n\n## Strategic Product Recommendations\n\n1. **Goal-Anchored SIP Journey:** Allow investors to tag every SIP with a personal goal (e.g., 'Emergency Fund', 'Travel 2026', 'First Home'). Show progress in terms of milestone proximity rather than just fluctuating rupee amounts.\n2. **First 90-Day Volatility Shield:** Introduce dedicated onboarding reassurance during market dips. When markets drop, show context-aware educational banners ('Rupee Cost Averaging in action: you are buying more units at lower NAV today').\n3. **Smart SIP Flexibility (Pause & Shift):** Replace binary cancellation with flexible options: 'Pause for 1–3 months', 'Shift debit date by 7 days', or 'Halve amount temporarily' to accommodate cashflow shocks without breaking the habit.\n4. **Demystified Return Displays:** Supplement raw XIRR/CAGR with intuitive visual breakdowns comparing invested capital, accumulated units, and long-term compounding trajectories.\n\n---\n\n## Methodology Note\n\n- **Corpus Scope:** 19 raw feedback records harvested across 6 channels (app_store, help_forum, play_store, reddit, web, youtube).\n- **Relevance Filtering & Tagging:** LLM classification performed using `qwen/qwen3.8-27b` across 8 taxonomic dimensions (relevance, problem types, lifecycle stage, behavioral signals, emotional state, trigger types, retention risk, pattern type).\n- **Vector Indexing & Clustering:** Chroma vector embeddings (`text-embedding-3-small`) combined with rule-based heuristics and HDBSCAN unsupervised clustering.\n- **Evidence Grounding:** All quotes and statistics are strictly referenced from the tagged dataset (`data/tagged_items.json`) with zero hallucinated feedback."
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groww · SIP Retention & Investor Intelligence Engine</title>
+  <meta name="description" content="AI Discovery Engine analyzing first-time mutual fund investor behaviors, dropout triggers, and 12-month retention opportunities at Groww.">
+  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Chart.js for interactive analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Marked for markdown formatting -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+  <link rel="icon" type="image/png" href="assets/groww-logo-270.png">
+</head>
+<body>
+  <div class="app-container">
+    <!-- ── Left Dark Sidebar ─────────────────────────────────────────── -->
+    <aside class="sidebar">
+      <div>
+        <div class="brand-header">
+          <div class="brand-logo" title="Groww SIP Intelligence">
+            <img src="assets/groww-logo-270.png" alt="Groww Logo" style="width:100%; height:100%; object-fit:contain; border-radius:50%; display:block;">
+          </div>
+          <div>
+            <div class="brand-title">Groww</div>
+            <div class="brand-subtitle">SIP Retention Discovery Engine</div>
+          </div>
+        </div>
+
+        <div class="filter-section-title">Retention Filters</div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="filter-source">Channel / Source</label>
+          <select id="filter-source" class="select-control">
+            <option value="ALL">All Channels (6)</option>
+            <option value="play_store">Google Play Store</option>
+            <option value="reddit">Reddit (r/IndiaInvestments, etc.)</option>
+            <option value="app_store">Apple App Store</option>
+            <option value="youtube">YouTube Reviews & Comments</option>
+            <option value="help_forum">TradingQ&A / Investor Forums</option>
+            <option value="web">Web Search & Articles</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="filter-stage">SIP Lifecycle Stage</label>
+          <select id="filter-stage" class="select-control">
+            <option value="ALL">All Lifecycle Stages</option>
+            <option value="first_month">Month 1 (Onboarding)</option>
+            <option value="early_1_3m">Months 1–3 (Early Volatility)</option>
+            <option value="mid_4_6m">Months 4–6 (Statement Fatigue)</option>
+            <option value="late_7_12m">Months 7–12 (Habit Maturation)</option>
+            <option value="post_dropout">Post-Dropout (Lapsed)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="filter-area">Opportunity Space</label>
+          <select id="filter-area" class="select-control">
+            <option value="ALL">All Opportunity Spaces (10)</option>
+            <option value="Social Proof Dependency">1. Social Proof Dependency (Frustration: 4.50/5.0)</option>
+            <option value="Unrealistic Return Expectations">2. Unrealistic Return Expectations (Frustration: 3.67/5.0)</option>
+            <option value="Trust & Transparency Deficit">3. Trust & Transparency Deficit (Frustration: 3.25/5.0)</option>
+            <option value="Comparison & Regret Spiral">4. Comparison & Regret Spiral (Frustration: 3.25/5.0)</option>
+            <option value="Early Portfolio Anxiety">5. Early Portfolio Anxiety (Frustration: 3.25/5.0)</option>
+            <option value="Market Volatility Panic">6. Market Volatility Panic (Frustration: 3.25/5.0)</option>
+            <option value="Goal Disconnection">7. Goal Disconnection (Frustration: 3.25/5.0)</option>
+            <option value="Financial Literacy Gap">8. Financial Literacy Gap (Frustration: 3.00/5.0)</option>
+            <option value="Life Event Disruption">9. Life Event Disruption (Frustration: 2.83/5.0)</option>
+            <option value="App Experience Friction">10. App Experience Friction (Frustration: 2.50/5.0)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="filter-frustration">Retention Risk</label>
+          <select id="filter-frustration" class="select-control">
+            <option value="ALL">All Risk Levels</option>
+            <option value="high">High Risk (Immediate Churn / Failed Debit)</option>
+            <option value="med">Medium Risk (Latent Anxiety / Negative XIRR)</option>
+            <option value="already_churned">Already Churned / Cancelled</option>
+          </select>
+        </div>
+
+        <div class="filter-buttons">
+          <button id="btn-apply-filters" class="btn-primary">Apply Filter</button>
+          <button id="btn-reset-filters" class="btn-secondary">Reset</button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ── Main View Area ────────────────────────────────────────────── -->
+    <main class="main-wrapper">
+      <!-- Sticky Top Navbar -->
+      <header class="top-navbar">
+        <div class="header-row">
+          <div class="header-title-wrap" style="display:flex; align-items:center; gap:16px;">
+            <div style="width:44px; height:44px; border-radius:50%; overflow:hidden; flex-shrink:0; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+              <img src="assets/groww-logo-270.png" alt="Groww Logo" style="width:100%; height:100%; object-fit:contain; display:block;">
+            </div>
+            <div>
+              <h1 style="margin:0 0 2px 0;">Groww · SIP Retention & Investor Intelligence</h1>
+              <p style="margin:0;">AI Discovery Engine uncovering first-time mutual fund investor behaviors, dropout triggers, and 12-month active retention opportunities</p>
+            </div>
+          </div>
+          <div class="channel-badge" id="active-dataset-badge">
+            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#00D09C; margin-right:6px;"></span>
+            6 Channels Active
+          </div>
+        </div>
+
+        <nav class="nav-tabs" role="tablist">
+          <div class="nav-tab-item active" data-tab="tab-dashboard" role="tab" id="tabnav-dashboard">📊 Dashboard</div>
+          <div class="nav-tab-item" data-tab="tab-explorer" role="tab" id="tabnav-explorer">🗂️ Data Explorer</div>
+          <div class="nav-tab-item" data-tab="tab-matrix" role="tab" id="tabnav-matrix">📑 Opportunity Matrix</div>
+          <div class="nav-tab-item" data-tab="tab-assistant" role="tab" id="tabnav-assistant">💬 AI Discovery Assistant</div>
+          <div class="nav-tab-item" data-tab="tab-report" role="tab" id="tabnav-report">📄 Synthesis Report</div>
+        </nav>
+      </header>
+
+      <!-- Scrollable Tab Content Container -->
+      <div class="content-body">
+        
+        <!-- ── TAB 1: DASHBOARD ──────────────────────────────────────── -->
+        <section id="tab-dashboard" class="tab-pane active" role="tabpanel">
+          <!-- 4 Elevated KPI Cards -->
+          <div class="kpi-grid">
+            <div class="kpi-card kpi-blue">
+              <div class="kpi-label">Customer Evidence Signals</div>
+              <div class="kpi-value" id="kpi-evidence-count">19</div>
+              <div class="kpi-subtext">Across 6 investor discovery channels</div>
+            </div>
+
+            <div class="kpi-card kpi-purple">
+              <div class="kpi-label">Opportunity Spaces</div>
+              <div class="kpi-value" id="kpi-opportunity-count">10</div>
+              <div class="kpi-subtext">Ranked by retention risk & volume</div>
+            </div>
+
+            <div class="kpi-card kpi-red">
+              <div class="kpi-label">SIP Abandonment Rate</div>
+              <div class="kpi-value" id="kpi-top-failure">26.3%</div>
+              <div class="kpi-subtext" id="kpi-top-failure-sub">Paused or cancelled within 12 months</div>
+            </div>
+
+            <div class="kpi-card kpi-green">
+              <div class="kpi-label">Voiced Need vs Inferred</div>
+              <div class="kpi-value" id="kpi-voiced-pct">84.2%</div>
+              <div class="kpi-subtext">Explicit churn vs latent anxiety</div>
+            </div>
+          </div>
+
+          <!-- Platform Reviews Extraction Breakdown Bar -->
+          <div class="platform-stats-container" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:18px 22px; margin-bottom:24px; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:1.1rem;">📥</span>
+                <span style="font-size:1rem; font-weight:700; color:#0f172a;">Customer Reviews & Feedback Extracted by Platform</span>
+              </div>
+              <span id="platform-total-badge" style="background:#E6FAF5; color:#008765; font-size:0.82rem; font-weight:700; padding:4px 12px; border-radius:20px; border:1px solid #A7F3D0;">Total Verified Signals</span>
+            </div>
+            <div class="platform-chips-grid" id="platform-chips-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px;">
+              <!-- Dynamically populated by app.js -->
+            </div>
+          </div>
+
+          <!-- Charts Grid (2 columns) -->
+          <div class="charts-grid">
+            <div class="chart-card">
+              <div class="chart-header">
+                <div class="chart-title">Evidence Distribution by Channel</div>
+                <div class="chart-subtitle">Cross-platform distribution of analyzed customer pain points</div>
+              </div>
+              <div class="chart-canvas-wrap">
+                <canvas id="chart-sources"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <div class="chart-title">SIP Lifecycle Dropout Hazard</div>
+                <div class="chart-subtitle">Where first-time mutual fund investors disengage during months 1–12</div>
+              </div>
+              <div class="chart-canvas-wrap">
+                <canvas id="chart-funnel"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Heading: Opportunity Spaces -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:32px; margin-bottom:12px;">
+            <div>
+              <h2 style="font-size:1.3rem; font-weight:700; color:#0f172a;">
+                Strategic Opportunity Spaces
+              </h2>
+              <p style="font-size:0.85rem; color:#64748b;">
+                Ranked by user frustration severity (highest friction first) mapped from grounded customer retrieval signals
+              </p>
+            </div>
+            <span class="badge-pill" style="background:#FEF2F2; color:#DC2626; border:1px solid #FECACA; font-weight:700;">Ranked by Frustration Point</span>
+          </div>
+
+          <!-- 3-Column Opportunity Spaces Cards Grid -->
+          <div class="opp-grid" id="opp-cards-container">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </section>
+
+        <!-- ── TAB 2: DATA EXPLORER ───────────────────────────────────── -->
+        <section id="tab-explorer" class="tab-pane" role="tabpanel">
+          <div class="explorer-card">
+            <div class="table-controls">
+              <input type="text" id="explorer-search" class="search-input" placeholder="🔍 Search feedback text (e.g. 'paused', 'loss', 'NAV', 'FD', 'crash', 'charges', 'delay')...">
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span id="explorer-counter" style="font-size:0.85rem; font-weight:600; color:#64748b; white-space:nowrap;">Showing all items</span>
+                <button id="btn-export-csv" class="btn-secondary" style="display:flex; align-items:center; gap:6px; padding:8px 16px;">
+                  📥 Export CSV
+                </button>
+              </div>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table class="data-table" id="explorer-table">
+                <thead>
+                  <tr>
+                    <th style="width: 55px; text-align: center;">#</th>
+                    <th>Customer Evidence Signal</th>
+                    <th style="width: 140px;">Lifecycle Stage</th>
+                    <th style="width: 110px;">Retention Risk</th>
+                    <th style="width: 180px;">Assigned Space</th>
+                    <th style="width: 130px;">Source</th>
+                  </tr>
+                </thead>
+                <tbody id="explorer-tbody">
+                  <!-- Dynamically populated by app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── TAB 3: OPPORTUNITY MATRIX ──────────────────────────────── -->
+        <section id="tab-matrix" class="tab-pane" role="tabpanel">
+          <div class="explorer-card" style="margin-bottom: 24px; border-radius: 16px; padding: 28px 32px; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <div>
+                <h2 style="font-size:1.25rem; font-weight:700; margin-bottom:4px; color:#0f172a; letter-spacing:-0.01em;">
+                  Opportunity Prioritization & Strategic Impact Matrix
+                </h2>
+                <p style="font-size:0.88rem; color:#64748b; margin-bottom:0; font-weight:400;">
+                  Systemic evaluation sorted by user frustration severity (highest first), evidence volume, and core cognitive blocker.
+                </p>
+              </div>
+              <span class="badge-pill" style="background:#FEF2F2; color:#DC2626; border:1px solid #FECACA; font-weight:700;">Sorted by Frustration Severity</span>
+            </div>
+
+            <div style="overflow-x: auto;">
+              <table class="data-table" id="matrix-table">
+                <thead>
+                  <tr>
+                    <th style="width: 65px;">Rank</th>
+                    <th style="width: 220px;">Opportunity Space</th>
+                    <th>Strategic Value Proposition</th>
+                    <th style="width: 110px;">Signals</th>
+                    <th style="width: 115px;">Frustration</th>
+                    <th style="width: 200px;">Primary Cognitive Blocker</th>
+                  </tr>
+                </thead>
+                <tbody id="matrix-tbody">
+                  <!-- Dynamically populated by app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Failure Stage Breakdown Card -->
+          <div class="explorer-card" style="border-radius: 16px; padding: 24px 28px; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);">
+            <h3 style="font-size:1.12rem; font-weight:700; margin-bottom:16px; color:#0f172a; letter-spacing:-0.01em;">
+              Failure Stage Breakdown Across Platforms
+            </h3>
+            <div id="breakdown-matrix-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+              <!-- Dynamically populated by app.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ── TAB 4: AI DISCOVERY ASSISTANT ──────────────────────────── -->
+        <section id="tab-assistant" class="tab-pane" role="tabpanel">
+          <div class="assistant-layout-v2">
+
+            <!-- ── Left: Chat Column ───────────────────────────────────── -->
+            <div class="chat-column">
+
+              <!-- Chat Header -->
+              <div class="chat-header-v2">
+                <div class="chat-avatar-ring">
+                  <div class="chat-avatar-icon" style="padding:0; overflow:hidden; border-radius:50%; display:flex; align-items:center; justify-content:center; background:transparent;">
+                    <img src="assets/groww-logo-270.png" alt="Groww" style="width:100%; height:100%; object-fit:contain; border-radius:50%; display:block;">
+                  </div>
+                  <span class="chat-status-dot"></span>
+                </div>
+                <div class="chat-header-info">
+                  <div class="chat-header-name">AI Discovery Assistant</div>
+                  <div class="chat-header-sub">Powered by Groq · Grounded in your data</div>
+                </div>
+                <div class="chat-header-actions">
+                  <button id="btn-clear-chat" class="chat-action-btn" title="Clear conversation">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+                  </button>
+                  <span id="chat-mode-badge" class="mode-badge mode-live">● Live AI</span>
+                </div>
+              </div>
+
+              <!-- Suggested Prompts Chips -->
+              <div class="chips-scroll-area">
+                <div class="chips-row" id="chips-row">
+                  <button class="chip-btn" data-prompt="Why do investors struggle with NAV and annualized XIRR transparency?">🔍 NAV & XIRR Opacity</button>
+                  <button class="chip-btn" data-prompt="Why do first-time investors expect guaranteed linear returns like fixed deposits?">🧠 Linear Return Gap</button>
+                  <button class="chip-btn" data-prompt="Why do mandate auto-debits fail mid-tenure and how does it trigger cancellation?">❓ Why Debits Fail</button>
+                  <button class="chip-btn" data-prompt="How does salary credit delay cause mid-life mandate failures?">📅 Salary Timing</button>
+                  <button class="chip-btn" data-prompt="What impact do bank ECS and NACH bounce penalties have on churn?">⚠️ Bank Bounce Charges</button>
+                  <button class="chip-btn" data-prompt="Why do investors drop out within the first 1–3 months of starting a SIP?">🚪 Early Dropout</button>
+                  <button class="chip-btn" data-prompt="What are the top opportunity areas and product interventions to boost 12-month retention?">💡 Top Retention Levers</button>
+                </div>
+              </div>
+
+              <!-- Message Thread -->
+              <div class="chat-thread-v2" id="chat-thread">
+                <!-- Welcome message injected by JS -->
+              </div>
+
+              <!-- Input Bar -->
+              <div class="chat-inputbar">
+                <form id="chat-form" class="chat-form-inner">
+                  <textarea id="chat-input" class="chat-textarea"
+                    placeholder="Ask anything about the data, user behavior, or product strategy..."
+                    rows="1"
+                    autocomplete="off"></textarea>
+                  <button type="submit" id="btn-send" class="send-btn" title="Send">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                  </button>
+                </form>
+                <div class="input-footer">
+                  <span id="api-status-label" class="api-status">Connecting…</span>
+                  <span>·</span>
+                  <span>Groq Llama 3.3 70B</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Right: Evidence Drawer ──────────────────────────────── -->
+            <div class="evidence-col">
+              <div class="evidence-header">
+                <h3 class="evidence-title">Evidence Drawer</h3>
+                <span id="evidence-count-badge" class="ev-count-badge">0 matched</span>
+              </div>
+
+              <!-- Cognitive Recall Spectrum Card -->
+              <div class="recall-spectrum-card">
+                <div class="recall-card-title">COGNITIVE RECALL SPECTRUM</div>
+                <div class="meter-row"><div class="meter-label"><span>Early Volatility & NAV Shock</span><strong>51.6%</strong></div><div class="meter-track"><div class="meter-fill" style="width:51.6%;background:#2563EB"></div></div></div>
+                <div class="meter-row"><div class="meter-label"><span>Time & Lifecycle Dropoff</span><strong>48.4%</strong></div><div class="meter-track"><div class="meter-fill" style="width:48.4%;background:#10B981"></div></div></div>
+                <div class="meter-row"><div class="meter-label"><span>Statement & Browse Fatigue</span><strong>41.9%</strong></div><div class="meter-track"><div class="meter-fill" style="width:41.9%;background:#F59E0B"></div></div></div>
+                <div class="meter-row"><div class="meter-label"><span>Missing Pause Affordance</span><strong>38.7%</strong></div><div class="meter-track"><div class="meter-fill" style="width:38.7%;background:#06B6D4"></div></div></div>
+                <div class="meter-row" style="margin-bottom:0"><div class="meter-label"><span style="color:#EF4444;font-weight:600;">Bank Bounce Penalty Fear</span><strong style="color:#EF4444;">80.6%</strong></div><div class="meter-track"><div class="meter-fill" style="width:80.6%;background:#EF4444"></div></div></div>
+              </div>
+
+              <!-- Verbatim customer signals -->
+              <div class="ev-quotes-label" style="font-size:0.72rem; font-weight:700; color:#64748B; letter-spacing:0.06em; text-transform:uppercase; margin-top:20px; margin-bottom:12px;">VERBATIM CUSTOMER SIGNALS</div>
+              <div id="evidence-quotes-container" class="ev-quotes-list">
+                <div class="ev-placeholder" style="font-size:0.82rem; color:#94A3B8; text-align:center; padding:36px 16px; line-height:1.5;">Evidence records retrieved for each query will appear here.</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ── TAB 5: SYNTHESIS REPORT ────────────────────────────────── -->
+        <section id="tab-report" class="tab-pane" role="tabpanel">
+          <div style="max-width:960px; margin:0 auto 20px auto; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h2 style="font-size:1.3rem; font-weight:700; color:#0f172a;">
+                Strategic Executive Synthesis Report
+              </h2>
+              <p style="font-size:0.85rem; color:#64748b;">
+                First-time mutual fund investor retention diagnostics & actionable 12-month product roadmap
+              </p>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button id="btn-download-md" class="btn-secondary" style="display:flex; align-items:center; gap:6px; padding:8px 16px;">
+                📥 Download Markdown
+              </button>
+              <button id="btn-print-report" class="btn-primary" style="display:flex; align-items:center; gap:6px; padding:8px 16px;">
+                🖨️ Print / Save PDF
+              </button>
+            </div>
+          </div>
+
+          <div class="report-container" id="report-content">
+            <p style="color:#64748b;">Loading report content...</p>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Floating Chat FAB -->
+  <button class="chat-fab" id="chat-fab" title="Open AI Assistant">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+
+  <!-- Application Logic -->
+  <script src="app.js?v=18"></script>
+</body>
+</html>
