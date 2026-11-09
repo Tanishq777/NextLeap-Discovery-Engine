@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 915" width="100%" height="100%" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#222" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-opacity="0.05"/>
+    </filter>
+  </defs>
+
+  <style>
+    .container-box { fill: #fefce8; stroke: #eab308; stroke-width: 0.8; stroke-opacity: 0.55; rx: 4px; }
+    .container-title { font-size: 12.5px; font-weight: 500; fill: #1c1917; text-anchor: middle; }
+    .node-box { fill: #ffffff; stroke: #a8a29e; stroke-width: 0.8; rx: 3px; filter: url(#shadow); }
+    .node-text { font-size: 11px; fill: #1c1917; text-anchor: middle; font-weight: 400; }
+    .node-subtext { font-size: 9.5px; fill: #78716c; text-anchor: middle; }
+    .purple-box { fill: #f5f3ff; stroke: #c084fc; stroke-width: 0.8; rx: 3px; filter: url(#shadow); }
+    .purple-text { font-size: 11px; fill: #581c87; text-anchor: middle; font-weight: 500; }
+    .pill-box { fill: #f5f5f4; stroke: #a8a29e; stroke-width: 0.8; rx: 11px; }
+    .pill-text { font-size: 10px; fill: #292524; text-anchor: middle; font-weight: 400; }
+    .arrow-line { stroke: #262626; stroke-width: 1.1; fill: none; marker-end: url(#arrow); }
+    .cylinder-body { fill: #cffafe; stroke: #38bdf8; stroke-width: 0.8; }
+    .cylinder-top { fill: #bae6fd; stroke: #38bdf8; stroke-width: 0.8; }
+    .db-text-main { font-size: 11px; font-weight: 500; fill: #0369a1; text-anchor: middle; }
+    .db-text-sub { font-size: 9.5px; fill: #0284c7; text-anchor: middle; }
+  </style>
+
+  <!-- ==================== 1. DATA SCRAPING ==================== -->
+  <g id="layer1" transform="translate(60, 15)">
+    <rect class="container-box" x="0" y="0" width="560" height="74" />
+    <text class="container-title" x="280" y="19">1. Data Scraping</text>
+
+    <!-- Source 1 -->
+    <rect class="node-box" x="14" y="28" width="124" height="36" />
+    <text class="node-text" x="76" y="44">Google Play Store</text>
+    <text class="node-subtext" x="76" y="56">com.nextbillion.groww</text>
+
+    <!-- Source 2 -->
+    <rect class="node-box" x="150" y="28" width="124" height="36" />
+    <text class="node-text" x="212" y="44">Apple App Store</text>
+    <text class="node-subtext" x="212" y="56">Groww iOS (1404871703)</text>
+
+    <!-- Source 3 -->
+    <rect class="node-box" x="286" y="28" width="124" height="36" />
+    <text class="node-text" x="348" y="44">Reddit &amp; YouTube</text>
+    <text class="node-subtext" x="348" y="56">r/mutualfunds &amp; Finance</text>
+
+    <!-- Source 4 -->
+    <rect class="node-box" x="422" y="28" width="124" height="36" />
+    <text class="node-text" x="484" y="44">Investor Forums &amp; Web</text>
+    <text class="node-subtext" x="484" y="56">TradingQ&amp;A / ValuePickr</text>
+  </g>
+
+  <!-- Arrow L1 to L2 -->
+  <path class="arrow-line" d="M 340 89 L 340 112" />
+
+  <!-- ==================== 2. NOISE FILTERING & RELEVANCE SEEDING ==================== -->
+  <g id="layer2" transform="translate(60, 112)">
+    <rect class="container-box" x="0" y="0" width="560" height="216" />
+    <text class="container-title" x="280" y="20">2. Noise Filtering &amp; Relevance Seeding</text>
+
+    <!-- Step 1 -->
+    <rect class="node-box" x="180" y="32" width="200" height="28" />
+    <text class="node-text" x="280" y="50">Fetch Raw Feedback Items</text>
+
+    <!-- Arrow 1->2 -->
+    <path class="arrow-line" d="M 280 60 L 280 78" />
+
+    <!-- Step 2 -->
+    <rect class="node-box" x="160" y="78" width="240" height="28" />
+    <text class="node-text" x="280" y="96">Redact PII (Phones, Bank/Demat Acc, Emails)</text>
+
+    <!-- Arrow 2->3 -->
+    <path class="arrow-line" d="M 280 106 L 280 124" />
+
+    <!-- Step 3 -->
+    <rect class="node-box" x="150" y="124" width="260" height="28" />
+    <text class="node-text" x="280" y="142">Drop Emoji-Only &amp; Short Reviews (&lt;35 chars)</text>
+
+    <!-- Arrow 3->4 -->
+    <path class="arrow-line" d="M 280 152 L 280 170" />
+
+    <!-- Step 4 -->
+    <rect class="node-box" x="135" y="170" width="290" height="34" />
+    <text class="node-text" x="280" y="186">Two-Level Filter &amp; Deduplication (SHA-256 / Jaccard)</text>
+    <text class="node-subtext" x="280" y="198">+ Strict Rule 0 Synthetic Test Quarantine</text>
+  </g>
+
+  <!-- Connectors from Step 4 down (Center is 340, bottom is 328) and splitting to L3 -->
+  <path class="arrow-line" d="M 340 328 L 340 348 L 205 348 L 205 422" />
+  
+  <!-- Right branch goes through pill -->
+  <path style="stroke: #262626; stroke-width: 1.1; fill: none;" d="M 340 348 L 475 348 L 475 354" />
+  <!-- Pill on right connector -->
+  <g transform="translate(420, 354)">
+    <rect class="pill-box" x="0" y="0" width="110" height="22" />
+    <text class="pill-text" x="55" y="15">Filtered Reviews</text>
+  </g>
+  <path class="arrow-line" d="M 475 376 L 475 422" />
+
+  <!-- ==================== 3. DUAL-ENGINE CLASSIFICATION ==================== -->
+  <g id="layer3" transform="translate(60, 390)">
+    <rect class="container-box" x="0" y="0" width="560" height="175" />
+    <text class="container-title" x="280" y="20">3. Dual-Engine Classification</text>
+
+    <!-- LEFT COLUMN: Deterministic (center is 145 in layer3, 205 in world) -->
+    <g transform="translate(40, 32)">
+      <!-- Filtered pill -->
+      <rect class="pill-box" x="50" y="0" width="110" height="22" />
+      <text class="pill-text" x="105" y="15">Filtered Reviews</text>
+
+      <path class="arrow-line" d="M 105 22 L 105 42" />
+
+      <!-- Keyword Engine -->
+      <rect class="node-box" x="5" y="42" width="200" height="38" />
+      <text class="node-text" x="105" y="58">Keyword Deterministic Engine</text>
+      <text class="node-subtext" x="105" y="71">(Regex &amp; Hinglish Lexicon)</text>
+
+      <path class="arrow-line" d="M 105 80 L 105 102" />
+
+      <!-- Baseline Maps -->
+      <rect class="node-box" x="20" y="102" width="170" height="28" />
+      <text class="node-text" x="105" y="120">Full Baseline Maps</text>
+    </g>
+
+    <!-- RIGHT COLUMN: Dynamic LLM (center is 415 in layer3, 475 in world) -->
+    <g transform="translate(305, 32)">
+      <!-- Dynamic LLM -->
+      <rect class="purple-box" x="10" y="0" width="220" height="38" />
+      <text class="purple-text" x="120" y="16">Dynamic LLM Sampling</text>
+      <text class="node-subtext" x="120" y="29">(Groq LLaMA 3.3 70B / Qwen 27B)</text>
+
+      <path class="arrow-line" d="M 120 38 L 120 58" />
+
+      <!-- 10-Dimension Taxonomy -->
+      <rect class="purple-box" x="5" y="58" width="230" height="38" />
+      <text class="purple-text" x="120" y="74">10-Dimension Taxonomy</text>
+      <text class="node-subtext" x="120" y="87">&amp; Evidence Span Extraction</text>
+
+      <path class="arrow-line" d="M 120 96 L 120 116" />
+
+      <!-- Structured Evidence JSON -->
+      <rect class="node-box" x="30" y="116" width="180" height="26" />
+      <text class="node-text" x="120" y="133">Structured Evidence JSON</text>
+    </g>
+  </g>
+
+  <!-- Arrows L3 to L4 -->
+  <path class="arrow-line" d="M 205 565 L 205 610" />
+  <path class="arrow-line" d="M 475 565 L 475 610" />
+
+  <!-- ==================== 4. ARTIFACTS & DATASETS ==================== -->
+  <g id="layer4" transform="translate(60, 610)">
+    <rect class="container-box" x="0" y="0" width="560" height="110" />
+    <text class="container-title" x="280" y="18">4. Artifacts &amp; Datasets</text>
+
+    <!-- Left Cylinder / DB: bundle.json (center relative 145, world 205) -->
+    <g transform="translate(50, 30)">
+      <path class="cylinder-body" d="M 0 10 L 0 54 A 95 14 0 0 0 190 54 L 190 10 Z" />
+      <ellipse class="cylinder-top" cx="95" cy="10" rx="95" ry="10" />
+      <text class="db-text-main" x="95" y="32">bundle.json</text>
+      <text class="db-text-sub" x="95" y="47">Full Dataset Aggregates &amp; Quotes</text>
+    </g>
+
+    <!-- Right Cylinder / DB: discovery_engine.db (center relative 415, world 475) -->
+    <g transform="translate(320, 30)">
+      <path class="cylinder-body" d="M 0 10 L 0 54 A 95 14 0 0 0 190 54 L 190 10 Z" />
+      <ellipse class="cylinder-top" cx="95" cy="10" rx="95" ry="10" />
+      <text class="db-text-main" x="95" y="32">discovery_engine.db</text>
+      <text class="db-text-sub" x="95" y="47">Classified Items &amp; Gold Standard</text>
+    </g>
+  </g>
+
+  <!-- Arrows L4 to L5: converging to FastAPI Backend at 340 -->
+  <path class="arrow-line" d="M 205 720 L 205 735 L 340 735 L 340 750" />
+  <path class="arrow-line" d="M 475 720 L 475 735 L 340 735 L 340 750" />
+
+  <!-- ==================== 5. INSIGHT GENERATION & DASHBOARD ==================== -->
+  <g id="layer5" transform="translate(60, 750)">
+    <rect class="container-box" x="0" y="0" width="560" height="145" />
+    <text class="container-title" x="280" y="20">5. Insight Generation &amp; Discovery Pulse Dashboard</text>
+
+    <!-- FastAPI Backend Box (world center 340, relative center 280) -->
+    <rect class="purple-box" x="135" y="32" width="290" height="38" />
+    <text class="purple-text" x="280" y="48">FastAPI Backend</text>
+    <text class="node-subtext" x="280" y="61">(Wilson CIs, Cramér's V &amp; Opportunity Map)</text>
+
+    <!-- Arrow from backend splitting to UI and AI Assistant -->
+    <path class="arrow-line" d="M 280 70 L 280 88 L 145 88 L 145 100" />
+    <path class="arrow-line" d="M 280 70 L 280 88 L 415 88 L 415 100" />
+
+    <!-- Left UI Box (relative center 145, world center 205) -->
+    <rect class="purple-box" x="35" y="100" width="220" height="36" />
+    <text class="purple-text" x="145" y="115">Discovery Pulse Dashboard</text>
+    <text class="node-subtext" x="145" y="127">(Verbatim Quotes &amp; Research Views)</text>
+
+    <!-- Right AI Assistant Box (relative center 415, world center 475) -->
+    <rect class="purple-box" x="305" y="100" width="220" height="36" />
+    <text class="purple-text" x="415" y="115">Groq Grounded Insights Assistant</text>
+    <text class="node-subtext" x="415" y="127">(Strictly Grounded PM Synthesis)</text>
+  </g>
+</svg>

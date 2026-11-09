@@ -642,11 +642,30 @@ function renderOpportunityMatrix() {
 }
 
 // ── 10. AI Discovery Assistant ──────────────────────────────────────────────
-let activeChatApi = '/api';
+// Determine API base URL: check window/process environment binding or default to public rewrite '/api'
+let activeChatApi = (typeof window !== 'undefined' && (window.API_URL || (window.__ENV__ && window.__ENV__.API_URL))) 
+  || (typeof process !== 'undefined' && process.env && process.env.API_URL) 
+  || '/api';
 let conversationHistory = [];
 let isStreaming = false;
 
 async function resolveChatApi() {
+  // 1. If an explicit bound service URL is provided, try that first
+  const boundUrl = (typeof window !== 'undefined' && (window.API_URL || (window.__ENV__ && window.__ENV__.API_URL)))
+    || (typeof process !== 'undefined' && process.env && process.env.API_URL);
+  if (boundUrl) {
+    try {
+      const cleanBound = boundUrl.replace(/\/+$/, '');
+      const healthPath = cleanBound.endsWith('/api') ? `${cleanBound}/health` : `${cleanBound}/api/health`;
+      const r = await fetch(healthPath, { signal: AbortSignal.timeout(1800) });
+      if (r.ok) {
+        activeChatApi = cleanBound;
+        return { ok: true, data: await r.json() };
+      }
+    } catch {}
+  }
+
+  // 2. Try the standard public service rewrite path '/api'
   try {
     const r = await fetch('/api/health', { signal: AbortSignal.timeout(1800) });
     if (r.ok) {
@@ -655,7 +674,8 @@ async function resolveChatApi() {
     }
   } catch {}
 
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+  // 3. Localhost fallback for standalone development (e.g. python chat_api.py on port 8001)
+  if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
     const localEndpoints = ['http://localhost:8001/api', 'http://localhost:8001'];
     for (const ep of localEndpoints) {
       try {
@@ -709,18 +729,6 @@ function setupAssistant() {
     renderWelcome();
     updateEvidenceDrawer([]);
   });
-
-  const fab = document.getElementById('chat-fab');
-  if (fab) {
-    fab.addEventListener('click', () => {
-      document.querySelectorAll('.nav-tab-item').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-      const tabBtn = document.getElementById('tabnav-assistant');
-      const tabPane = document.getElementById('tab-assistant');
-      if (tabBtn) tabBtn.classList.add('active');
-      if (tabPane) tabPane.classList.add('active');
-    });
-  }
 
   checkApiHealth();
 }

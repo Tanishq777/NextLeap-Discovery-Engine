@@ -1240,28 +1240,6 @@ body {
 }
 .welcome-sub { font-size: 0.84rem; color: #64748b; line-height: 1.65; }
 
-/* ── FAB ── */
-.chat-fab {
-  position: fixed;
-  bottom: 26px;
-  right: 26px;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #ec4899);
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 24px rgba(99,102,241,0.45);
-  z-index: 9998;
-  transition: all 0.22s;
-  font-size: 1.3rem;
-}
-.chat-fab:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 10px 32px rgba(99,102,241,0.55); }
-
 /* ── Print / Save PDF Media Query ────────────────────────────────────────── */
 @media print {
   @page {
@@ -1296,7 +1274,6 @@ body {
   .sidebar,
   .top-navbar,
   .nav-tabs-wrapper,
-  .chat-fab,
   .chat-modal,
   .filter-buttons,
   .table-controls,

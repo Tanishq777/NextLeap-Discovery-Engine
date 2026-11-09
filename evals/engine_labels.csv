@@ -1,0 +1,21 @@
+n,id,on_topic,retention_relevant,primary_area,lifecycle_stage,retention_risk
+1,d7f940e5-c1f9-4dec-83eb-b1fda33020e5,1,0,General Mutual Fund Feedback,unknown,low
+2,c9952b45-37f9-439e-9864-760a23bf2663,1,1,Unrealistic Return Expectations,mid_4_6m,already_churned
+3,e65a3809-6489-4800-a5ee-5b7529d6f2c0,1,1,Early Portfolio Anxiety,early_1_3m,med
+4,ed9f1b4f-240c-4d3c-942b-08272dcf7232,1,0,General Mutual Fund Feedback,unknown,low
+5,2073630b-5607-4564-906e-31243d653be2,1,1,Social Proof Dependency,mid_4_6m,high
+6,6933e5b4-b669-4c96-b0e2-8ab3cfbaaa79,1,1,Market Volatility Panic,early_1_3m,high
+7,04dbe524-c6fe-4d83-a0d1-331e8cb4e98d,1,0,General Mutual Fund Feedback,unknown,low
+8,e573d017-b036-4f36-86f2-fa3e8ceccca2,1,1,Financial Literacy Gap,first_month,med
+9,3e5995b7-a37a-4c55-9cb7-9183831d1505,1,1,Social Proof Dependency,early_1_3m,high
+10,8d8b0a85-7d5e-4817-bf5b-b3a0372d9dc3,1,1,App Experience Friction,mid_4_6m,already_churned
+11,ea9c4cac-3e85-4a07-af14-b7d3b9af7ead,1,1,Unrealistic Return Expectations,early_1_3m,high
+12,1f983a6a-d93f-438c-8772-b3f55d8ce514,1,1,Life Event Disruption,post_dropout,already_churned
+13,d7cfae28-eeeb-4fb8-9c56-638567f08a37,1,1,App Experience Friction,early_1_3m,already_churned
+14,c998008b-4630-4527-928e-20bddcc6b23e,1,1,Trust & Transparency Deficit,first_month,high
+15,38eba138-1bbe-4604-a4c7-4293c52ca119,1,1,Financial Literacy Gap,early_1_3m,med
+16,a1b2c3d4-e5f6-4789-9abc-def012345678,1,1,Early Portfolio Anxiety,early_1_3m,high
+17,160f865c-314a-42fb-85a7-fd8679b45051,1,1,Comparison & Regret Spiral,mid_4_6m,high
+18,951d2f33-9115-4a3a-afd3-ab04c36738bd,1,1,Goal Disconnection,early_1_3m,med
+19,17d98dbd-9acf-4315-be7b-cc09ca50d4f1,1,1,Goal Disconnection,mid_4_6m,high
+20,5e9ba756-4ff4-42e2-aaa8-593b759ef6e6,1,1,Life Event Disruption,early_1_3m,high

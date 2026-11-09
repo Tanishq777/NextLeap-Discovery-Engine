@@ -220,10 +220,12 @@ async def handle_chat_stream(req: ChatRequest):
     )
 
 @app.post("/api/chat")
+@app.post("/chat")
 async def chat_endpoint(req: ChatRequest):
     return await handle_chat_stream(req)
 
 @app.get("/api/health")
+@app.get("/health")
 def health():
     return {
         "status": "ok",
@@ -235,6 +237,7 @@ def health():
 
 @app.get("/api/bundle.json")
 @app.get("/api/data/bundle.json")
+@app.get("/bundle.json")
 def serve_api_bundle():
     p = find_file("data/bundle.json") or find_file("bundle.json")
     if p and p.is_file():

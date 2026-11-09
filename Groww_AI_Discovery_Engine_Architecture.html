@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Groww AI Discovery Engine Architecture</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, 'Georgia', serif;
+    color: #111111;
+    background: #ffffff;
+    font-size: 11pt;
+    line-height: 1.44;
+  }
+  
+  .page {
+    width: 210mm;
+    height: 297mm;
+    box-sizing: border-box;
+    padding: 24mm 24mm 16mm 24mm;
+    page-break-after: always;
+    page-break-inside: avoid;
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  /* Page 1 Specific */
+  .title {
+    text-align: center;
+    font-size: 19.5pt;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-bottom: 26pt;
+    color: #000000;
+  }
+  .section-header {
+    font-size: 13.5pt;
+    font-weight: bold;
+    margin-bottom: 16pt;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #000000;
+  }
+  .section-header .icon {
+    font-size: 14pt;
+  }
+  
+  ul.pipeline-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  ul.pipeline-list > li {
+    position: relative;
+    padding-left: 18pt;
+    margin-bottom: 14pt;
+    text-align: left;
+  }
+  ul.pipeline-list > li::before {
+    content: "●";
+    position: absolute;
+    left: 2pt;
+    top: 0;
+    font-size: 8.5pt;
+    color: #000000;
+  }
+  .item-title {
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  ul.sub-list {
+    list-style: none;
+    padding-left: 12pt;
+    margin-top: 7pt;
+    margin-bottom: 4pt;
+  }
+  ul.sub-list > li {
+    position: relative;
+    padding-left: 18pt;
+    margin-bottom: 7pt;
+    text-align: left;
+  }
+  ul.sub-list > li::before {
+    content: "○";
+    position: absolute;
+    left: 2pt;
+    top: -1px;
+    font-size: 8.5pt;
+    color: #000000;
+  }
+
+  /* Page 2 Specific */
+  .page-2 {
+    padding: 16mm 18mm 12mm 18mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .diagram-wrapper {
+    width: 100%;
+    height: 100%;
+    max-height: 265mm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .diagram-wrapper svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <div class="title">Groww AI Discovery Engine</div>
+  <div class="section-header">
+    <span class="icon">⚙️</span> <span>Pipeline Breakdown</span>
+  </div>
+  
+  <ul class="pipeline-list">
+    <li>
+      <span class="item-title">Data Scraping:</span> The pipeline begins by fetching real user feedback across multi-channel public platforms—Google Play Store (com.nextbillion.groww), Apple App Store (Groww: Stocks &amp; Mutual Funds), targeted Reddit communities (r/mutualfunds, r/personalfinanceindia, r/IndiaInvestments, r/IndianStreetBets, r/groww), YouTube video comments (official Groww mutual fund explainers and retail finance channels), investor help forums (TradingQ&amp;A by Zerodha, ValuePickr), and financial web queries using Python collectors, Apify actors, and Playwright scraper scripts.
+    </li>
+    
+    <li>
+      <span class="item-title">Noise Filtering &amp; Relevance Seeding:</span> Before analysis, raw text is aggressively filtered. PII (phone numbers, emails, bank/demat account numbers, PAN identifiers) is redacted, low-quality reviews (emoji-only, &lt;35 characters, alpha-character density &lt;40%) are dropped, hash-based deduplication (exact SHA-256 and Jaccard token similarity &ge; 0.85) removes duplicates, and a <strong>Two-Level Relevance Filter</strong> isolates retention-relevant signals: Level 1 filters out equity trading and crypto noise, while Level 2 isolates active SIP drop, pause, failure, or regret signals (<em>"stop sip"</em>, <em>"failed debit"</em>, <em>"bounce charge"</em>, <em>"negative returns"</em>, <em>"xirr wrong"</em>, <em>"how to pause"</em>), alongside strict Rule 0 synthetic test quarantine.
+    </li>
+    
+    <li>
+      <span class="item-title">Dual-Engine Classification:</span>
+      <ul class="sub-list">
+        <li>
+          <span class="item-title">Keyword Deterministic Engine:</span> Fast, regex-based matching with Hinglish and Hindi vocabulary support that buckets all incoming reviews into baseline friction themes, lifecycle stages, and drop types.
+        </li>
+        <li>
+          <span class="item-title">Dynamic LLM Engine:</span> On-demand Groq LPU API (powered by LLaMA 3.3 70B and Qwen 27B) that classifies reviews into a structured <strong>10-Dimension Research Taxonomy</strong> (<em>drop_type</em>, <em>sip_status</em>, <em>trigger</em>, <em>stage_of_mention</em>, <em>in_app_confusion_object</em>, <em>mandate_subcluster</em>, <em>stated_expectation</em>, <em>outside_app_action</em>, <em>disconfirming_pass_attribution</em>, <em>segment_cue</em>) with verbatim evidence extraction and confidence scores.
+        </li>
+      </ul>
+    </li>
+    
+    <li>
+      <span class="item-title">Artifacts &amp; Datasets:</span> The classified dataset and aggregated metrics are persisted in SQLite (discovery_engine.db) across normalized tables (raw_items, tagged_items), as well as static JSON and CSV artifacts (bundle.json, opportunity_areas.csv, and unsure_question_bank_v2.json), enabling a stateless, decoupled backend architecture and high-performance serverless deployments.
+    </li>
+    
+    <li>
+      <span class="item-title">Insight Generation &amp; UI:</span> The FastAPI API server reads active artifacts, calculates Wilson 95% confidence intervals, Cramér's V channel independence scores, and multi-factor opportunity rankings to construct the <strong>Ranked Opportunity Map (10 Defensible Opportunity Spaces)</strong> and <strong>105 Audited Golden Questions</strong>. The <strong>Discovery Pulse Dashboard</strong> surfaces verbatim user quotes and powers an interactive <strong>Groq AI Insights Assistant</strong> strictly grounded on these artifacts without hallucinations.
+    </li>
+  </ul>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page page-2">
+  <div class="diagram-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 910" width="100%" height="100%" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#222" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-opacity="0.05"/>
+    </filter>
+  </defs>
+
+  <style>
+    .container-box { fill: #fefce8; stroke: #eab308; stroke-width: 0.8; stroke-opacity: 0.55; rx: 4px; }
+    .container-title { font-size: 12.5px; font-weight: 500; fill: #1c1917; text-anchor: middle; }
+    .node-box { fill: #ffffff; stroke: #a8a29e; stroke-width: 0.8; rx: 3px; filter: url(#shadow); }
+    .node-text { font-size: 11px; fill: #1c1917; text-anchor: middle; font-weight: 400; }
+    .node-subtext { font-size: 9.5px; fill: #78716c; text-anchor: middle; }
+    .purple-box { fill: #f5f3ff; stroke: #c084fc; stroke-width: 0.8; rx: 3px; filter: url(#shadow); }
+    .purple-text { font-size: 11px; fill: #581c87; text-anchor: middle; font-weight: 500; }
+    .pill-box { fill: #f5f5f4; stroke: #a8a29e; stroke-width: 0.8; rx: 11px; }
+    .pill-text { font-size: 10px; fill: #292524; text-anchor: middle; font-weight: 400; }
+    .arrow-line { stroke: #262626; stroke-width: 1.1; fill: none; marker-end: url(#arrow); }
+    .cylinder-body { fill: #cffafe; stroke: #38bdf8; stroke-width: 0.8; }
+    .cylinder-top { fill: #bae6fd; stroke: #38bdf8; stroke-width: 0.8; }
+    .db-text-main { font-size: 11px; font-weight: 500; fill: #0369a1; text-anchor: middle; }
+    .db-text-sub { font-size: 9.5px; fill: #0284c7; text-anchor: middle; }
+  </style>
+
+  <!-- ==================== 1. DATA SCRAPING ==================== -->
+  <g id="layer1" transform="translate(60, 15)">
+    <rect class="container-box" x="0" y="0" width="560" height="74" />
+    <text class="container-title" x="280" y="19">1. Data Scraping</text>
+
+    <!-- Source 1 -->
+    <rect class="node-box" x="14" y="28" width="124" height="36" />
+    <text class="node-text" x="76" y="44">Google Play Store</text>
+    <text class="node-subtext" x="76" y="56">com.nextbillion.groww</text>
+
+    <!-- Source 2 -->
+    <rect class="node-box" x="150" y="28" width="124" height="36" />
+    <text class="node-text" x="212" y="44">Apple App Store</text>
+    <text class="node-subtext" x="212" y="56">Groww iOS (1404871703)</text>
+
+    <!-- Source 3 -->
+    <rect class="node-box" x="286" y="28" width="124" height="36" />
+    <text class="node-text" x="348" y="44">Reddit &amp; YouTube</text>
+    <text class="node-subtext" x="348" y="56">r/mutualfunds &amp; Finance</text>
+
+    <!-- Source 4 -->
+    <rect class="node-box" x="422" y="28" width="124" height="36" />
+    <text class="node-text" x="484" y="44">Investor Forums &amp; Web</text>
+    <text class="node-subtext" x="484" y="56">TradingQ&amp;A / ValuePickr</text>
+  </g>
+
+  <!-- Arrow L1 to L2 -->
+  <path class="arrow-line" d="M 340 89 L 340 110" />
+
+  <!-- ==================== 2. NOISE FILTERING & RELEVANCE SEEDING ==================== -->
+  <g id="layer2" transform="translate(60, 112)">
+    <rect class="container-box" x="0" y="0" width="560" height="216" />
+    <text class="container-title" x="280" y="20">2. Noise Filtering &amp; Relevance Seeding</text>
+
+    <!-- Step 1 -->
+    <rect class="node-box" x="180" y="32" width="200" height="28" />
+    <text class="node-text" x="280" y="50">Fetch Raw Feedback Items</text>
+
+    <!-- Arrow 1->2 -->
+    <path class="arrow-line" d="M 280 60 L 280 76" />
+
+    <!-- Step 2 -->
+    <rect class="node-box" x="160" y="78" width="240" height="28" />
+    <text class="node-text" x="280" y="96">Redact PII (Phones, Bank/Demat Acc, Emails)</text>
+
+    <!-- Arrow 2->3 -->
+    <path class="arrow-line" d="M 280 106 L 280 122" />
+
+    <!-- Step 3 -->
+    <rect class="node-box" x="150" y="124" width="260" height="28" />
+    <text class="node-text" x="280" y="142">Drop Emoji-Only &amp; Short Reviews (&lt;35 chars)</text>
+
+    <!-- Arrow 3->4 -->
+    <path class="arrow-line" d="M 280 152 L 280 168" />
+
+    <!-- Step 4 -->
+    <rect class="node-box" x="135" y="170" width="290" height="34" />
+    <text class="node-text" x="280" y="186">Two-Level Filter &amp; Deduplication (SHA-256 / Jaccard)</text>
+    <text class="node-subtext" x="280" y="198">+ Strict Rule 0 Synthetic Test Quarantine</text>
+  </g>
+
+  <!-- Connectors from Step 4 down and splitting to L3 -->
+  <path class="arrow-line" d="M 280 328 L 280 348 L 205 348 L 205 388" />
+  <path class="arrow-line" d="M 280 348 L 475 348 L 475 388" />
+
+  <!-- Intermediate Pill for Filtered Reviews placed over right connector -->
+  <g transform="translate(420, 337)">
+    <rect class="pill-box" x="0" y="0" width="110" height="22" />
+    <text class="pill-text" x="55" y="15">Filtered Reviews</text>
+  </g>
+
+  <!-- ==================== 3. DUAL-ENGINE CLASSIFICATION ==================== -->
+  <g id="layer3" transform="translate(60, 390)">
+    <rect class="container-box" x="0" y="0" width="560" height="175" />
+    <text class="container-title" x="280" y="20">3. Dual-Engine Classification</text>
+
+    <!-- LEFT COLUMN: Deterministic -->
+    <g transform="translate(40, 32)">
+      <!-- Filtered pill -->
+      <rect class="pill-box" x="50" y="0" width="110" height="22" />
+      <text class="pill-text" x="105" y="15">Filtered Reviews</text>
+
+      <path class="arrow-line" d="M 105 22 L 105 40" />
+
+      <!-- Keyword Engine -->
+      <rect class="node-box" x="5" y="42" width="200" height="38" />
+      <text class="node-text" x="105" y="58">Keyword Deterministic Engine</text>
+      <text class="node-subtext" x="105" y="71">(Regex &amp; Hinglish Lexicon)</text>
+
+      <path class="arrow-line" d="M 105 80 L 105 100" />
+
+      <!-- Baseline Maps -->
+      <rect class="node-box" x="20" y="102" width="170" height="28" />
+      <text class="node-text" x="105" y="120">Full Baseline Maps</text>
+    </g>
+
+    <!-- RIGHT COLUMN: Dynamic LLM -->
+    <g transform="translate(310, 32)">
+      <!-- Dynamic LLM -->
+      <rect class="purple-box" x="10" y="0" width="210" height="38" />
+      <text class="purple-text" x="115" y="16">Dynamic LLM Sampling</text>
+      <text class="node-subtext" x="115" y="29">(Groq LLaMA 3.3 70B / Qwen 27B)</text>
+
+      <path class="arrow-line" d="M 115 38 L 115 56" />
+
+      <!-- 10-Dimension Taxonomy -->
+      <rect class="purple-box" x="5" y="58" width="220" height="38" />
+      <text class="purple-text" x="115" y="74">10-Dimension Taxonomy</text>
+      <text class="node-subtext" x="115" y="87">&amp; Evidence Span Extraction</text>
+
+      <path class="arrow-line" d="M 115 96 L 115 114" />
+
+      <!-- Structured Evidence JSON -->
+      <rect class="node-box" x="25" y="116" width="180" height="26" />
+      <text class="node-text" x="115" y="133">Structured Evidence JSON</text>
+    </g>
+  </g>
+
+  <!-- Arrows L3 to L4 -->
+  <path class="arrow-line" d="M 145 565 L 145 608" />
+  <path class="arrow-line" d="M 425 565 L 425 608" />
+
+  <!-- ==================== 4. ARTIFACTS & DATASETS ==================== -->
+  <g id="layer4" transform="translate(60, 610)">
+    <rect class="container-box" x="0" y="0" width="560" height="110" />
+    <text class="container-title" x="280" y="18">4. Artifacts &amp; Datasets</text>
+
+    <!-- Left Cylinder / DB: bundle.json -->
+    <g transform="translate(55, 30)">
+      <path class="cylinder-body" d="M 0 10 L 0 54 A 95 14 0 0 0 190 54 L 190 10 Z" />
+      <ellipse class="cylinder-top" cx="95" cy="10" rx="95" ry="10" />
+      <text class="db-text-main" x="95" y="32">bundle.json</text>
+      <text class="db-text-sub" x="95" y="47">Full Dataset Aggregates &amp; Quotes</text>
+    </g>
+
+    <!-- Right Cylinder / DB: discovery_engine.db -->
+    <g transform="translate(315, 30)">
+      <path class="cylinder-body" d="M 0 10 L 0 54 A 95 14 0 0 0 190 54 L 190 10 Z" />
+      <ellipse class="cylinder-top" cx="95" cy="10" rx="95" ry="10" />
+      <text class="db-text-main" x="95" y="32">discovery_engine.db</text>
+      <text class="db-text-sub" x="95" y="47">Classified Items &amp; Gold Standard</text>
+    </g>
+  </g>
+
+  <!-- Arrows L4 to L5 -->
+  <path class="arrow-line" d="M 150 720 L 150 735 L 280 735 L 280 748" />
+  <path class="arrow-line" d="M 410 720 L 410 735 L 280 735 L 280 748" />
+
+  <!-- ==================== 5. INSIGHT GENERATION & DASHBOARD ==================== -->
+  <g id="layer5" transform="translate(60, 750)">
+    <rect class="container-box" x="0" y="0" width="560" height="145" />
+    <text class="container-title" x="280" y="20">5. Insight Generation &amp; Discovery Pulse Dashboard</text>
+
+    <!-- FastAPI Backend Box -->
+    <rect class="purple-box" x="135" y="32" width="290" height="38" />
+    <text class="purple-text" x="280" y="48">FastAPI Backend</text>
+    <text class="node-subtext" x="280" y="61">(Wilson CIs, Cramér's V &amp; Opportunity Map)</text>
+
+    <!-- Arrow from backend splitting to UI and AI Assistant -->
+    <path class="arrow-line" d="M 280 70 L 280 88 L 150 88 L 150 98" />
+    <path class="arrow-line" d="M 280 70 L 280 88 L 410 88 L 410 98" />
+
+    <!-- Left UI Box -->
+    <rect class="purple-box" x="40" y="100" width="220" height="36" />
+    <text class="purple-text" x="150" y="115">Discovery Pulse Dashboard</text>
+    <text class="node-subtext" x="150" y="127">(Verbatim Quotes &amp; Research Views)</text>
+
+    <!-- Right AI Assistant Box -->
+    <rect class="purple-box" x="300" y="100" width="220" height="36" />
+    <text class="purple-text" x="410" y="115">Groq Grounded Insights Assistant</text>
+    <text class="node-subtext" x="410" y="127">(Strictly Grounded PM Synthesis)</text>
+  </g>
+</svg>
+  </div>
+</div>
+
+</body>
+</html>
